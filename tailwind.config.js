@@ -9,6 +9,7 @@ export default {
         darkBlueColor: '#0B44CD',
         lightBlueColor: '#3470FF',
         darkFontColor: '#121417',
+        logoColor: '#2b99de',
       },
     },
   },
