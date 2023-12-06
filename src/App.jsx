@@ -1,12 +1,12 @@
 import React from 'react';
+import { Navbar } from './components/Navbar';
 
 const App = () => {
   return (
     <>
-      <div className="text-green-500">
-        <p className="bg-yellow-500">App</p>
+      <div>
+        <Navbar />
       </div>
-      <div></div>
     </>
   );
 };
