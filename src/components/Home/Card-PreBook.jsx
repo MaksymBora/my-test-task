@@ -17,8 +17,8 @@ export const CardPreBook = () => {
                 GUARANTEE YOURSELF A CAR
               </h5>
               <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
-                Book a car in advance and we'll deliver it to you – when you
-                want it, where you want it.
+                Book a car in advance and we'll deliver it to you {'\u2014'}{' '}
+                when you want it, where you want it.
               </p>
               <Button title={'Pre-Book Now'} />
             </div>
