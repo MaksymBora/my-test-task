@@ -1,10 +1,10 @@
+import { CardAuto } from '../components/Catalog/CardAuto';
+
 const Catalog = () => {
   return (
-    <>
-      <div>Catalog</div>
-      <div>Catalog</div>
-      <div>Catalog</div>
-    </>
+    <div className="md:container-xl p-4 md:px-4">
+      <CardAuto />
+    </div>
   );
 };
 

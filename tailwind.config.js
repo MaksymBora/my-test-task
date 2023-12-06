@@ -14,6 +14,7 @@ export default {
         lightBlueColor: '#3470FF',
         darkFontColor: '#121417',
         logoColor: '#2b99de',
+        cardOptionsColor: 'rgba(18, 20, 23, 0.50)',
       },
     },
   },
