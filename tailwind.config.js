@@ -6,6 +6,9 @@ export default {
       colors: {
         brightColor: '#ab6b2e',
         backgroundColor: '#fde9cc',
+        darkBlueColor: '#0B44CD',
+        lightBlueColor: '#3470FF',
+        darkFontColor: '#121417',
       },
     },
   },

@@ -1,12 +1,20 @@
 import React from 'react';
-import { Navbar } from './components/Navbar';
+import { Route, Routes } from 'react-router-dom';
+import { Layout } from './components/Layout';
+import Home from './Pages/Home';
+import Catalog from './Pages/Catalog';
+import Favorites from './Pages/Favorites';
 
 const App = () => {
   return (
     <>
-      <div>
-        <Navbar />
-      </div>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path="catalog" element={<Catalog />} />
+          <Route path="favorites" element={<Favorites />} />
+        </Route>
+      </Routes>
     </>
   );
 };
