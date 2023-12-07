@@ -1,14 +1,27 @@
 import { Button } from '../common/Button';
 
-export const CardAuto = () => {
+export const CardAuto = ({
+  carData: {
+    make,
+    model,
+    type,
+    img,
+    functionalities,
+    rentalCompany,
+    address,
+    rentalPrice,
+  },
+}) => {
   return (
     <>
-      <div className="w-[274px] bg-transparent ">
+      <div className="w-[274px] bg-transparent">
         <div className="relative">
           <img
-            src="https://stimg.cardekho.com/images/carexteriorimages/630x420/Maruti/Swift/10406/1697698080681/front-left-side-47.jpg?impolicy=resize&imwidth=480"
+            src={img}
             alt="car"
-            className=" rounded-[14px] h-[268px] mb-3.5"
+            loading="lazy"
+            height="268"
+            className="rounded-[14px] h-[268px] mb-3.5"
           />
 
           {/* text-[#dbdfe6] fill-[#3470ff] */}

@@ -16,13 +16,13 @@ export const CatalogList = () => {
 
   return (
     <>
-      <ul className="mb-[100px]">
+      <ul className="mb-[100px] flex flex-wrap gap-[29px]">
         {allCars.map((car) => {
-          const { id, year, make, model, type, img, description } = car;
+          const { id } = car;
 
           return (
             <li key={id}>
-              <CardAuto />
+              <CardAuto carData={car} />
             </li>
           );
         })}
