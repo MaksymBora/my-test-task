@@ -1,6 +1,6 @@
 import cardImg2 from '../../assets/images/cardimg2.jpg';
 import cardImg3 from '../../assets/images/cardimg3.jpg';
-import { Button } from '../Button';
+import { Button } from '../common/Button';
 
 export const CardPreBook = () => {
   return (
