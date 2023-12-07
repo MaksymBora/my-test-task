@@ -18,11 +18,12 @@ export const Modal = () => {
         id="default-modal"
         tabindex="-1"
         aria-hidden="false"
-        className=" fix bg-backdropColor overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full"
+        // h-[calc(100%-1rem)]
+        className="block fixed bg-backdropColor overflow-y-auto overflow-x-hidden z-50 w-full md:inset-0 h-full"
       >
-        <div className="absolute w-full max-w-full">
+        <div>
           {/*  Modal content */}
-          <div className="relative max-w-[541px] p-[40px] left-[50%] top-[50%] translate-x-[-50%]  bg-white rounded-[24px] shadow dark:bg-gray-700">
+          <div className="absolute max-w-[541px] p-[40px] left-[50%] top-[50%] -translate-x-[50%] -translate-y-[50%] bg-white rounded-[24px] shadow dark:bg-gray-700">
             {/*  Modal header  */}
             <div className="flex items-center justify-between rounded-t ">
               {/* -------- Close Modal Button ------- */}
@@ -52,8 +53,8 @@ export const Modal = () => {
               </button>
             </div>
             {/* --------- Modal body -------- */}
-            <div className="">
-              <img src={modalimg} className="rounded-[14px]" />
+            <div>
+              <img src={modalimg} className="rounded-[14px]" height="307" />
 
               <h2 className="mt-[14px] mb-2 text-lg leading-6 font-medium text-darkFontColor dark:text-white">
                 Buick <span className="text-lightBlueColor">Eclave</span>, 2008
@@ -98,7 +99,7 @@ export const Modal = () => {
                   Accessories and functionalities:
                 </p>
 
-                <div className="text-cardOptionsColor text-xs leading-[18px] mb-7">
+                <div className="text-cardOptionsColor text-xs leading-[18px] mb-[24px]">
                   <ul className="flex flex-row items-start flex-wrap gap-y-1">
                     <li className="relative inline-block pr-[6px] mr-[6px] border-r-[1px]">
                       <p>Leather seats</p>
@@ -132,7 +133,7 @@ export const Modal = () => {
               <h3 className="mb-2 text-sm text-darkFontColor dark:text-white font-medium">
                 Rental Conditions:{' '}
               </h3>
-              <div className="mb-[24px] flex flex-wrap gap-2">
+              <div className="mb-[24px] flex flex-wrap gap-[8px]">
                 <p className="text-modalRentalColor darl:text-white text-xs leading-[18px] bg-[#f9f9f9] rounded-[35px] py-[7px] px-[14px]">
                   Minimum age :{' '}
                   <span className="text-lightBlueColor text-xs leading-[18px] font-semibold -tracking-[0.24]">
@@ -158,9 +159,9 @@ export const Modal = () => {
                   </span>
                 </p>
               </div>
+              {/* padding 12px */}
+              <Button title={'Rental car'} width={'168px'} />
             </div>
-            {/* padding 12px */}
-            <Button title={'Rental car'} width={'168px'} />
           </div>
         </div>
       </div>
