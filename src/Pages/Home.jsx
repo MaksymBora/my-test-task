@@ -7,7 +7,7 @@ const Home = () => {
   return (
     <>
       <Hero />
-      <div className="md:container-xl p-4 md:px-4">
+      <div className="p-4 md:px-4">
         <Description />
         <CardPreBook />
         <Review />

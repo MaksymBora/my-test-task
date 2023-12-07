@@ -1,5 +1,4 @@
 import { Button } from '../Button';
-import heart from '../../assets/heart.svg';
 
 export const CardAuto = () => {
   return (
