@@ -1,4 +1,6 @@
+import { useState } from 'react';
 import { Button } from '../common/Button';
+import { Modal } from '../common/Modal';
 
 export const CardAuto = ({
   carData: {
@@ -14,8 +16,17 @@ export const CardAuto = ({
     mileage,
   },
 }) => {
+  const [isOpenModal, setIsOpenModal] = useState(false);
   const addressArray = address.split(', ');
   const updateArray = addressArray.slice(-2);
+
+  const handleModalOpen = () => {
+    setIsOpenModal(!isOpenModal);
+  };
+
+  const handleModalClose = () => {
+    if (isOpenModal) setIsOpenModal(false);
+  };
 
   return (
     <>
@@ -86,8 +97,16 @@ export const CardAuto = ({
             </li>
           </ul>
         </div>
-        <Button title={'Learn more'} width={'w-full'} />
+        <Button
+          title={'Learn more'}
+          width={'w-full'}
+          onClick={handleModalOpen}
+        />
       </div>
+      <Modal
+        isOpenModalProp={isOpenModal}
+        handleModalCloseProp={handleModalClose}
+      />
     </>
   );
 };

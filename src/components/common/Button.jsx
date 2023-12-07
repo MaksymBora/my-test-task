@@ -1,7 +1,8 @@
-export const Button = ({ width, title }) => {
+export const Button = ({ width, title, onClick }) => {
   return (
     <button
       type="button"
+      onClick={onClick}
       className={`${
         width && width
       } min-w-[150px] m-0 py-[14px] px-[44px] border-none text-white bg-gradient-to-r text-[14px] leading-[20px] self-center from-blue-500
