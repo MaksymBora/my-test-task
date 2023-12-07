@@ -1,3 +1,6 @@
+import modalimg from '../../assets/images/modalimg.png';
+import { Button } from './Button';
+
 export const Modal = () => {
   return (
     <>
@@ -17,11 +20,11 @@ export const Modal = () => {
         aria-hidden="false"
         className=" fix bg-backdropColor overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full"
       >
-        <div className="absolute left-[50%] top-[50%] translate-y-[-50%] translate-x-[-50%]  p-4 w-full max-w-2xl max-h-full">
+        <div className="absolute  left-[50%] top-[50%] translate-y-[-50%] translate-x-[-50%] w-full max-w-[461px]">
           {/* <!-- Modal content --> */}
-          <div className="relative bg-white rounded-lg shadow dark:bg-gray-700">
+          <div className="relative p-[40px] bg-white rounded-[24px] shadow dark:bg-gray-700">
             {/* <!-- Modal header --> */}
-            <div className="flex items-center justify-between rounded-t ">
+            {/* <div className="flex items-center justify-between rounded-t ">
               <button
                 type="button"
                 className="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
@@ -44,22 +47,90 @@ export const Modal = () => {
                 </svg>
                 <span className="sr-only">Close modal</span>
               </button>
-            </div>
+            </div> */}
             {/* <!-- Modal body --> */}
-            <div className="p-4 md:p-5 space-y-4">
-              <p className="text-base leading-relaxed text-gray-500 dark:text-gray-400">
-                With less than a month to go before the European Union enacts
-                new consumer privacy laws for its citizens, companies around the
-                world are updating their terms of service agreements to comply.
+            <div className="space-y-4">
+              <img src={modalimg} className="rounded-[14px]" />
+              <div className="flex justify-between">
+                <p className="text-base font-medium text-darkFontColor">
+                  Buick <span className="text-lightBlueColor">Eclave</span>,
+                  2008
+                </p>
+                <p className="text-base font-medium text-darkFontColor mr-[9px] mb-2">
+                  $40
+                </p>
+              </div>
+              <div className="text-cardOptionsColor text-xs leading-[18px] mb-7">
+                <ul className="flex flex-row items-start flex-wrap gap-y-1">
+                  <li className="relative inline-block pr-[6px] mr-[6px] border-r-[1px]">
+                    <p>Kiev</p>
+                  </li>
+                  <li className="relative inline-block pr-[6px] mr-[6px] border-r-[1px]">
+                    <p>Ukraine</p>
+                  </li>
+                  <li className="relative inline-block pr-[6px] mr-[6px] border-r-[1px]">
+                    <p>Luxury Car Rentals</p>
+                  </li>
+                  <li className="relative inline-block pr-[6px] mr-[6px] border-r-[1px]">
+                    <p>Premiem</p>
+                  </li>
+                  <li className="relative inline-block pr-[6px] mr-[6px] border-r-[1px]">
+                    <p>Suv</p>
+                  </li>
+                  <li className="relative inline-block pr-[6px] mr-[6px] border-r-[1px]">
+                    <p>Enclave</p>
+                  </li>
+                  <li className="relative inline-block pr-[6px] mr-[6px] border-r-[1px]">
+                    <p>9582</p>
+                  </li>
+                  <li className="relative inline-block pr-[6px] mr-[6px] border-r-[1px]">
+                    <p>Power liftgate </p>
+                  </li>
+                </ul>
+              </div>
+              <p>
+                The Buick Enclave is a stylish and spacious SUV known for its
+                comfortable ride and luxurious features.
               </p>
-              <p className="text-base leading-relaxed text-gray-500 dark:text-gray-400">
-                The European Union’s General Data Protection Regulation
-                (G.D.P.R.) goes into effect on May 25 and is meant to ensure a
-                common set of data rights in the European Union. It requires
-                organizations to notify users as soon as possible of high-risk
-                data breaches that could personally affect them.
-              </p>
+              <p>Accessories and functionalities:</p>
+              <div className="text-cardOptionsColor text-xs leading-[18px] mb-7">
+                <ul className="flex flex-row items-start flex-wrap gap-y-1">
+                  <li className="relative inline-block pr-[6px] mr-[6px] border-r-[1px]">
+                    <p>Kiev</p>
+                  </li>
+                  <li className="relative inline-block pr-[6px] mr-[6px] border-r-[1px]">
+                    <p>Ukraine</p>
+                  </li>
+                  <li className="relative inline-block pr-[6px] mr-[6px] border-r-[1px]">
+                    <p>Luxury Car Rentals</p>
+                  </li>
+                  <li className="relative inline-block pr-[6px] mr-[6px] border-r-[1px]">
+                    <p>Premiem</p>
+                  </li>
+                  <li className="relative inline-block pr-[6px] mr-[6px] border-r-[1px]">
+                    <p>Suv</p>
+                  </li>
+                  <li className="relative inline-block pr-[6px] mr-[6px] border-r-[1px]">
+                    <p>Enclave</p>
+                  </li>
+                  <li className="relative inline-block pr-[6px] mr-[6px] border-r-[1px]">
+                    <p>9582</p>
+                  </li>
+                  <li className="relative inline-block pr-[6px] mr-[6px] border-r-[1px]">
+                    <p>Power liftgate </p>
+                  </li>
+                </ul>
+              </div>
+
+              <h3>Rental Conditions: </h3>
+              <p>Minimum age : 25</p>
+              <p>Minimum age : 25</p>
+              <p>Minimum age : 25</p>
+              <p>Minimum age : 25</p>
+              <p>Minimum age : 25</p>
             </div>
+            {/* padding 12px */}
+            <Button title={'Rental car'} width={'168px'} />
           </div>
         </div>
       </div>
