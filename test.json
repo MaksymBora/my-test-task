@@ -1,0 +1,184 @@
+[
+  {
+    "id": 1,
+    "year": 2015,
+    "make": "Lexus",
+    "model": "RX",
+    "type": "SUV",
+    "description": "The Lexus RX is a luxury SUV acclaimed for its reliability, upscale interior, and smooth ride.",
+    "fuelConsumption": "9.8",
+    "engineSize": "3.5L V6",
+    "accessories": [
+      "Heated and ventilated seats",
+      "Navigation system",
+      "Premium sound system"
+    ],
+    "functionalities": [
+      "Adaptive cruise control",
+      "Lane departure warning",
+      "Parking assist"
+    ],
+    "rentalPrice": "$55",
+    "rentalCompany": "Prestige Auto Rentals",
+    "address": "456 Example Avenue, Paris, France",
+    "rentalConditions": "Minimum age: 21\nValid driver's license\nCredit card required",
+    "mileage": 7896,
+    "photoLink": "https://www.thedrive.com/uploads/2022/09/08/2023-Lexus-RX_KL_10.jpg?auto=webp&crop=16%3A9&auto=webp&optimize=high&quality=70&width=1440"
+  },
+  {
+    "id": 2,
+    "year": 2019,
+    "make": "BMW",
+    "model": "X5",
+    "type": "SUV",
+    "description": "The BMW X5 combines sportiness with luxury, featuring a powerful engine and a plush interior.",
+    "fuelConsumption": "11.2",
+    "engineSize": "4.4L V8",
+    "accessories": [
+      "Leather upholstery",
+      "Panoramic moonroof",
+      "Harman Kardon audio system"
+    ],
+    "functionalities": [
+      "Heads-up display",
+      "Gesture control",
+      "Surround-view camera"
+    ],
+    "rentalPrice": "$70",
+    "rentalCompany": "Elite Car Rentals",
+    "address": "789 Sample Road, Berlin, Germany",
+    "rentalConditions": "Minimum age: 23\nValid driver's license\nSecurity deposit required",
+    "mileage": 6543,
+    "photoLink": "https://media.ed.edmunds-media.com/bmw/x5/2024/oem/2024_bmw_x5_4dr-suv_xdrive50e_fq_oem_1_1600.jpg"
+  },
+  {
+    "id": 3,
+    "year": 2017,
+    "make": "Audi",
+    "model": "Q7",
+    "type": "SUV",
+    "description": "The Audi Q7 blends sophistication and performance, offering a spacious and luxurious interior.",
+    "fuelConsumption": "10.9",
+    "engineSize": "3.0L V6",
+    "accessories": [
+      "Heated leather seats",
+      "Dual-pane panoramic sunroof",
+      "Bang & Olufsen sound system"
+    ],
+    "functionalities": [
+      "Virtual cockpit",
+      "Audi pre sense city",
+      "Parking system plus"
+    ],
+    "rentalPrice": "$60",
+    "rentalCompany": "Prestige Car Hire",
+    "address": "321 Sample Street, London, UK",
+    "rentalConditions": "Minimum age: 25\nValid driver's license\nInsurance coverage required",
+    "mileage": 7021,
+    "photoLink": "https://media.ed.edmunds-media.com/audi/q7/2022/oem/2022_audi_q7_4dr-suv_prestige_fq_oem_1_1600.jpg"
+  },
+  {
+    "id": 4,
+    "year": 2018,
+    "make": "Mercedes-Benz",
+    "model": "GLE",
+    "type": "SUV",
+    "description": "The Mercedes-Benz GLE offers a blend of opulence and performance, boasting a refined cabin and powerful engine options.",
+    "fuelConsumption": "11.5",
+    "engineSize": "3.0L V6",
+    "accessories": [
+      "Premium leather upholstery",
+      "Panoramic sunroof",
+      "Burmester surround sound system"
+    ],
+    "functionalities": [
+      "MBUX infotainment system",
+      "Active parking assist",
+      "Collision prevention assist"
+    ],
+    "rentalPrice": "$65",
+    "rentalCompany": "Luxury Auto Rentals",
+    "address": "987 Test Boulevard, New York, USA",
+    "rentalConditions": "Minimum age: 25\nValid driver's license\nSecurity deposit and insurance required",
+    "mileage": 8456,
+    "photoLink": "https://media.autoexpress.co.uk/image/private/s--X-WVjvBW--/f_auto,t_content-image-full-desktop@1/v1563182800/autoexpress/2019/05/01_21.jpg"
+  },
+  {
+    "id": 5,
+    "year": 2020,
+    "make": "Porsche",
+    "model": "Cayenne",
+    "type": "SUV",
+    "description": "The Porsche Cayenne embodies luxury and performance, delivering a thrilling driving experience with its powerful engine and sophisticated features.",
+    "fuelConsumption": "12.4",
+    "engineSize": "3.0L V6",
+    "accessories": [
+      "Sport seats with leather upholstery",
+      "Panoramic roof system",
+      "Bose surround sound system"
+    ],
+    "functionalities": [
+      "Porsche Communication Management",
+      "Adaptive cruise control",
+      "Lane-keeping assist"
+    ],
+    "rentalPrice": "$80",
+    "rentalCompany": "Prestige Luxury Rentals",
+    "address": "246 Excellence Lane, Los Angeles, USA",
+    "rentalConditions": "Minimum age: 25\nValid driver's license\nCredit card and insurance required",
+    "mileage": 6321,
+    "photoLink": "https://media.ed.edmunds-media.com/porsche/cayenne/2024/oem/2024_porsche_cayenne_4dr-suv_base_fq_oem_1_1600.jpg"
+  },
+  {
+    "id": 6,
+    "year": 2016,
+    "make": "Volvo",
+    "model": "XC90",
+    "type": "SUV",
+    "description": "The Volvo XC90 epitomizes safety and elegance, offering advanced safety features and a refined interior.",
+    "fuelConsumption": "9.5",
+    "engineSize": "2.0L Inline-4",
+    "accessories": [
+      "Nappa leather seats",
+      "Panoramic sunroof",
+      "Bowers & Wilkins audio system"
+    ],
+    "functionalities": [
+      "Pilot Assist",
+      "Run-off road mitigation",
+      "360-degree camera"
+    ],
+    "rentalPrice": "$50",
+    "rentalCompany": "Elegance Car Rentals",
+    "address": "369 Prestige Avenue, Sydney, Australia",
+    "rentalConditions": "Minimum age: 25\nValid driver's license\nSecurity deposit and insurance required",
+    "mileage": 9874,
+    "photoLink": "https://hips.hearstapps.com/hmg-prod/images/2024-volvo-xc90-101-649311ffdc60b.jpg?crop=0.487xw:0.486xh;0.332xw,0.319xh&resize=768:*"
+  },
+  {
+    "id": 8,
+    "year": 2022,
+    "make": "Jaguar",
+    "model": "F-Pace",
+    "type": "SUV",
+    "description": "The Jaguar F-Pace is a luxurious and sporty SUV known for its striking design and agile performance.",
+    "fuelConsumption": "10.2",
+    "engineSize": "2.0L Inline-4",
+    "accessories": [
+      "Windsor leather seats",
+      "Fixed panoramic roof",
+      "Meridian sound system"
+    ],
+    "functionalities": [
+      "Jaguar InControl Touch Pro",
+      "Adaptive Surface Response",
+      "Driver Condition Monitor"
+    ],
+    "rentalPrice": "$68",
+    "rentalCompany": "Luxury Car Rentals",
+    "address": "135 Prestige Street, Miami, USA",
+    "rentalConditions": "Minimum age: 25\nValid driver's license\nSecurity deposit and insurance required",
+    "mileage": 5123,
+    "photoLink": "https://images.prismic.io/carwow/089b8eeb-ec66-43c8-8b36-6cb7b7667bd3_jaguar-f-pace-plug-in-hybrid-3.jpg?fit=clip&q=60&w=750&cs=tinysrgb&auto=format"
+  }
+]
