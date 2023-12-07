@@ -1,5 +1,6 @@
 import { CardAuto } from '../components/Catalog/CardAuto';
 import { Filter } from '../components/Catalog/Filter';
+import { Modal } from '../components/common/Modal';
 
 const Catalog = () => {
   return (
@@ -17,6 +18,7 @@ const Catalog = () => {
           Load more
         </button>
       </section>
+      <Modal />
     </div>
   );
   f;

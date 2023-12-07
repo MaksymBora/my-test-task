@@ -5,7 +5,7 @@ import { InputFromTo } from './InputFromTo';
 export const Filter = () => {
   return (
     <>
-      <section className="flex justify-center gap-[18px] py-[50px]">
+      <section className="flex justify-center gap-[18px] py-[50px] flex-col md:flex-row ">
         <ModelsSelect
           width={'w-[224px]'}
           title={'Car Brand'}
@@ -18,7 +18,7 @@ export const Filter = () => {
         />
         <InputFromTo />
 
-        <div className="self-end">
+        <div className="self-center md:self-end">
           <Button title={'Search'} width={'min-w-[136px]'} />
         </div>
       </section>

@@ -5,6 +5,7 @@ export default {
     './src/**/*.{js,ts,jsx,tsx}',
     'node_modules/flowbite-react/lib/esm/**/*.js',
   ],
+  darkMode: 'class',
   theme: {
     extend: {
       colors: {
@@ -17,6 +18,7 @@ export default {
         cardOptionsColor: 'rgba(18, 20, 23, 0.50)',
         labelsColor: '#8A8A89',
         borderInputColor: 'rgba(138, 138, 137, 0.20)',
+        backdropColor: 'rgba(0, 0, 0, 0.75)',
       },
     },
   },
