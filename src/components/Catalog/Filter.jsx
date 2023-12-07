@@ -1,10 +1,11 @@
+import { Button } from '../common/Button';
 import { ModelsSelect } from '../common/DropdownSelect';
 import { InputFromTo } from './InputFromTo';
 
 export const Filter = () => {
   return (
     <>
-      <section className="flex justify-center items-center gap-[18px] py-[50px]">
+      <section className="flex justify-center gap-[18px] py-[50px]">
         <ModelsSelect
           width={'w-[224px]'}
           title={'Car Brand'}
@@ -16,6 +17,10 @@ export const Filter = () => {
           placeholder={'To $'}
         />
         <InputFromTo />
+
+        <div className="self-end">
+          <Button title={'Search'} width={'min-w-[136px]'} />
+        </div>
       </section>
     </>
   );
