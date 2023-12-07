@@ -21,7 +21,7 @@ export const ModelsSelect = ({ width, title, placeholder, options }) => {
 
   return (
     <div className={width}>
-      <h3 className="text-sm font-medium text-labelsColor dark:text-white mb-[8px]">
+      <h3 className="text-sm font-medium text-labelsColor dark:text-white mb-2">
         {title}
       </h3>
       <Select
