@@ -16,6 +16,7 @@ export default {
         logoColor: '#2b99de',
         cardOptionsColor: 'rgba(18, 20, 23, 0.50)',
         labelsColor: '#8A8A89',
+        borderInputColor: 'rgba(138, 138, 137, 0.20)',
       },
     },
   },
