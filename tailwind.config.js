@@ -19,6 +19,7 @@ export default {
         labelsColor: '#8A8A89',
         borderInputColor: 'rgba(138, 138, 137, 0.20)',
         backdropColor: 'rgba(0, 0, 0, 0.75)',
+        modalRentalColor: '#363535',
       },
     },
   },

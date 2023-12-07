@@ -20,14 +20,17 @@ export const Modal = () => {
         aria-hidden="false"
         className=" fix bg-backdropColor overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full"
       >
-        <div className="absolute  left-[50%] top-[50%] translate-y-[-50%] translate-x-[-50%] w-full max-w-[461px]">
-          {/* <!-- Modal content --> */}
-          <div className="relative p-[40px] bg-white rounded-[24px] shadow dark:bg-gray-700">
-            {/* <!-- Modal header --> */}
-            {/* <div className="flex items-center justify-between rounded-t ">
+        <div className="absolute w-full max-w-full">
+          {/*  Modal content */}
+          <div className="relative max-w-[541px] p-[40px] left-[50%] top-[50%] translate-x-[-50%]  bg-white rounded-[24px] shadow dark:bg-gray-700">
+            {/*  Modal header  */}
+            <div className="flex items-center justify-between rounded-t ">
+              {/* -------- Close Modal Button ------- */}
               <button
                 type="button"
-                className="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
+                className="absolute top-4 right-4 text-darkFontColor bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg 
+				text-sm w-[24px] h-[24px] ms-auto inline-flex justify-center items-center 
+				dark:hover:bg-gray-600 dark:hover:text-white"
                 data-modal-hide="default-modal"
               >
                 <svg
@@ -47,20 +50,16 @@ export const Modal = () => {
                 </svg>
                 <span className="sr-only">Close modal</span>
               </button>
-            </div> */}
-            {/* <!-- Modal body --> */}
-            <div className="space-y-4">
+            </div>
+            {/* --------- Modal body -------- */}
+            <div className="">
               <img src={modalimg} className="rounded-[14px]" />
-              <div className="flex justify-between">
-                <p className="text-base font-medium text-darkFontColor">
-                  Buick <span className="text-lightBlueColor">Eclave</span>,
-                  2008
-                </p>
-                <p className="text-base font-medium text-darkFontColor mr-[9px] mb-2">
-                  $40
-                </p>
-              </div>
-              <div className="text-cardOptionsColor text-xs leading-[18px] mb-7">
+
+              <h2 className="mt-[14px] mb-2 text-lg leading-6 font-medium text-darkFontColor dark:text-white">
+                Buick <span className="text-lightBlueColor">Eclave</span>, 2008
+              </h2>
+
+              <div className="text-cardOptionsColor text-xs leading-[18px] mb-[14px]">
                 <ul className="flex flex-row items-start flex-wrap gap-y-1">
                   <li className="relative inline-block pr-[6px] mr-[6px] border-r-[1px]">
                     <p>Kiev</p>
@@ -88,46 +87,77 @@ export const Modal = () => {
                   </li>
                 </ul>
               </div>
-              <p>
+              <p className="mb-[24px] text-sm text-darkFontColor dark:text-white">
                 The Buick Enclave is a stylish and spacious SUV known for its
                 comfortable ride and luxurious features.
               </p>
-              <p>Accessories and functionalities:</p>
-              <div className="text-cardOptionsColor text-xs leading-[18px] mb-7">
-                <ul className="flex flex-row items-start flex-wrap gap-y-1">
-                  <li className="relative inline-block pr-[6px] mr-[6px] border-r-[1px]">
-                    <p>Kiev</p>
-                  </li>
-                  <li className="relative inline-block pr-[6px] mr-[6px] border-r-[1px]">
-                    <p>Ukraine</p>
-                  </li>
-                  <li className="relative inline-block pr-[6px] mr-[6px] border-r-[1px]">
-                    <p>Luxury Car Rentals</p>
-                  </li>
-                  <li className="relative inline-block pr-[6px] mr-[6px] border-r-[1px]">
-                    <p>Premiem</p>
-                  </li>
-                  <li className="relative inline-block pr-[6px] mr-[6px] border-r-[1px]">
-                    <p>Suv</p>
-                  </li>
-                  <li className="relative inline-block pr-[6px] mr-[6px] border-r-[1px]">
-                    <p>Enclave</p>
-                  </li>
-                  <li className="relative inline-block pr-[6px] mr-[6px] border-r-[1px]">
-                    <p>9582</p>
-                  </li>
-                  <li className="relative inline-block pr-[6px] mr-[6px] border-r-[1px]">
-                    <p>Power liftgate </p>
-                  </li>
-                </ul>
+
+              {/* ---------- Accessories ---------- */}
+              <div className="mb-[24px]">
+                <p className="mb-2 text-sm text-darkFontColor dark:text-white">
+                  Accessories and functionalities:
+                </p>
+
+                <div className="text-cardOptionsColor text-xs leading-[18px] mb-7">
+                  <ul className="flex flex-row items-start flex-wrap gap-y-1">
+                    <li className="relative inline-block pr-[6px] mr-[6px] border-r-[1px]">
+                      <p>Leather seats</p>
+                    </li>
+                    <li className="relative inline-block pr-[6px] mr-[6px] border-r-[1px]">
+                      <p>Panoramic sunroof</p>
+                    </li>
+                    <li className="relative inline-block pr-[6px] mr-[6px] border-r-[1px]">
+                      <p>Power liftgate</p>
+                    </li>
+                    <li className="relative inline-block pr-[6px] mr-[6px] border-r-[1px]">
+                      <p>Premium audio system</p>
+                    </li>
+                    <li className="relative inline-block pr-[6px] mr-[6px] border-r-[1px]">
+                      <p>Remote start</p>
+                    </li>
+                    <li className="relative inline-block pr-[6px] mr-[6px] border-r-[1px]">
+                      <p>Blind-spot monitoring</p>
+                    </li>
+                    <li className="relative inline-block pr-[6px] mr-[6px] border-r-[1px]">
+                      <p>9582</p>
+                    </li>
+                    <li className="relative inline-block pr-[6px] mr-[6px] border-r-[1px]">
+                      <p>Power liftgate </p>
+                    </li>
+                  </ul>
+                </div>
               </div>
 
-              <h3>Rental Conditions: </h3>
-              <p>Minimum age : 25</p>
-              <p>Minimum age : 25</p>
-              <p>Minimum age : 25</p>
-              <p>Minimum age : 25</p>
-              <p>Minimum age : 25</p>
+              {/*---------- Rental Conditions ---------*/}
+              <h3 className="mb-2 text-sm text-darkFontColor dark:text-white font-medium">
+                Rental Conditions:{' '}
+              </h3>
+              <div className="mb-[24px] flex flex-wrap gap-2">
+                <p className="text-modalRentalColor darl:text-white text-xs leading-[18px] bg-[#f9f9f9] rounded-[35px] py-[7px] px-[14px]">
+                  Minimum age :{' '}
+                  <span className="text-lightBlueColor text-xs leading-[18px] font-semibold -tracking-[0.24]">
+                    25
+                  </span>
+                </p>
+                <p className="text-modalRentalColor darl:text-white text-xs leading-[18px] bg-[#f9f9f9] rounded-[35px] py-[7px] px-[14px]">
+                  Valid driver&rsquo;s license
+                </p>
+                <p className="text-modalRentalColor darl:text-white text-xs leading-[18px] bg-[#f9f9f9] rounded-[35px] py-[7px] px-[14px]">
+                  Security deposite required{' '}
+                </p>
+                <p className="text-modalRentalColor darl:text-white text-xs leading-[18px] bg-[#f9f9f9] rounded-[35px] py-[7px] px-[14px]">
+                  Mileage:{' '}
+                  <span className="text-lightBlueColor text-xs leading-[18px] font-semibold -tracking-[0.24]">
+                    5,858
+                  </span>
+                </p>
+                <p className="text-modalRentalColor darl:text-white text-xs leading-[18px] bg-[#f9f9f9] rounded-[35px] py-[7px] px-[14px]">
+                  Price:{' '}
+                  <span className="text-lightBlueColor text-xs leading-[18px] font-semibold -tracking-[0.24]">
+                    40$
+                  </span>
+                </p>
+              </div>
             </div>
             {/* padding 12px */}
             <Button title={'Rental car'} width={'168px'} />
