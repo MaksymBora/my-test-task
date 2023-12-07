@@ -3,6 +3,7 @@ import { Button } from '../common/Button';
 export const CardAuto = ({
   carData: {
     make,
+    year,
     model,
     type,
     img,
@@ -10,15 +11,19 @@ export const CardAuto = ({
     rentalCompany,
     address,
     rentalPrice,
+    mileage,
   },
 }) => {
+  const addressArray = address.split(', ');
+  const updateArray = addressArray.slice(-2);
+
   return (
     <>
       <div className="w-[274px] bg-transparent">
         <div className="relative">
           <img
             src={img}
-            alt="car"
+            alt={make}
             loading="lazy"
             height="268"
             className="rounded-[14px] h-[268px] mb-3.5"
@@ -41,39 +46,43 @@ export const CardAuto = ({
             />
           </svg>
         </div>
+
         <div className="flex justify-between">
           <p className="text-base font-medium text-darkFontColor">
-            Buick <span className="text-lightBlueColor">Eclave</span>, 2008
+            {make} <span className="text-lightBlueColor">{model}</span>, {year}
           </p>
           <p className="text-base font-medium text-darkFontColor mr-[9px] mb-2">
-            $40
+            {rentalPrice}
           </p>
         </div>
-        <div className="text-cardOptionsColor text-xs leading-[18px] mb-7">
-          <ul className="flex flex-row items-start flex-wrap gap-y-1">
+        <div className="text-cardOptionsColor text-xs leading-[18px] mb-7 ">
+          <ul className="flex flex-row items-start flex-nowrap mb-[4px] ">
             <li className="relative inline-block pr-[6px] mr-[6px] border-r-[1px]">
-              <p>Kiev</p>
+              <p>{updateArray[0]}</p>
             </li>
             <li className="relative inline-block pr-[6px] mr-[6px] border-r-[1px]">
-              <p>Ukraine</p>
+              <p>{updateArray[1]}</p>
             </li>
             <li className="relative inline-block pr-[6px] mr-[6px] border-r-[1px]">
-              <p>Luxury Car Rentals</p>
+              <p>{rentalCompany}</p>
+            </li>
+            {/* <li className="relative inline-block pr-[6px] mr-[6px]">
+              <p>Premium</p>
+            </li> */}
+          </ul>
+          {/* 2nd line */}
+          <ul className="flex flex-row items-start flex-nowrap gap-y-1">
+            <li className="relative inline-block pr-[6px] mr-[6px] border-r-[1px]">
+              <p>{type}</p>
             </li>
             <li className="relative inline-block pr-[6px] mr-[6px] border-r-[1px]">
-              <p>Premiem</p>
+              <p>{model}</p>
             </li>
             <li className="relative inline-block pr-[6px] mr-[6px] border-r-[1px]">
-              <p>Suv</p>
+              <p>{mileage}</p>
             </li>
-            <li className="relative inline-block pr-[6px] mr-[6px] border-r-[1px]">
-              <p>Enclave</p>
-            </li>
-            <li className="relative inline-block pr-[6px] mr-[6px] border-r-[1px]">
-              <p>9582</p>
-            </li>
-            <li className="relative inline-block pr-[6px] mr-[6px] border-r-[1px]">
-              <p>Power liftgate </p>
+            <li className="relative inline-block pr-[6px] mr-[6px] ">
+              <p>{functionalities[0].slice(0, 10)}</p>
             </li>
           </ul>
         </div>
