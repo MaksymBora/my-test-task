@@ -16,7 +16,7 @@ export const Modal = () => {
       {/* <!-- Main modal --> */}
       <div
         id="default-modal"
-        tabindex="-1"
+        tabIndex="-1"
         aria-hidden="false"
         className="hidden fix bg-backdropColor overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full"
       >
@@ -42,9 +42,9 @@ export const Modal = () => {
                 >
                   <path
                     stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
                     d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"
                   />
                 </svg>

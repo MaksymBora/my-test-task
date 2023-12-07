@@ -7,7 +7,7 @@ const handlePending = (state) => {
 
 const handleFulfilled = (state, action) => {
   state.isLoading = false;
-  state.items = action.payload;
+  state.catalog = action.payload;
   state.error = null;
 };
 
