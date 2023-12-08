@@ -21,7 +21,7 @@ export const CatalogList = () => {
 
   return (
     <>
-      <ul className="mb-[100px] flex justify-center items-center flex-wrap gap-[29px]">
+      <ul className="mb-[100px] flex justify-start items-center flex-wrap gap-[29px]">
         {allCars.map((car) => {
           const { id } = car;
 

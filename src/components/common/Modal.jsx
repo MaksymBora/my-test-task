@@ -1,6 +1,5 @@
 import { useEffect } from 'react';
-
-import { Button } from './Button';
+import noresponse from '../../assets/images/noresponse.jpg';
 
 export const Modal = ({
   isOpenModalProp,
@@ -75,6 +74,10 @@ export const Modal = ({
   const updatedMileAge =
     mileAgeString.slice(0, 1) + ',' + mileAgeString.slice(1);
 
+  const handleImageError = (event) => {
+    event.target.src = noresponse;
+  };
+
   return (
     <>
       {/* <!-- Main modal --> */}
@@ -125,7 +128,11 @@ export const Modal = ({
             </div>
             {/* --------- Modal body -------- */}
             <div className="">
-              <img src={img} className="rounded-[14px]" />
+              <img
+                src={img}
+                onError={handleImageError}
+                className="rounded-[14px]"
+              />
 
               <h2 className="mt-[14px] mb-[8px] text-lg leading-6 font-medium text-darkFontColor dark:text-white">
                 {make} <span className="text-lightBlueColor">{model}</span>,{' '}

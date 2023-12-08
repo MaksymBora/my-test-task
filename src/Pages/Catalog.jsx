@@ -10,7 +10,6 @@ const Catalog = () => {
       </section>
     </div>
   );
-  f;
 };
 
 export default Catalog;
