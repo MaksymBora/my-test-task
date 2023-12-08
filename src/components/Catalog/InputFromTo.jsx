@@ -1,4 +1,27 @@
+import { useDispatch } from 'react-redux';
+import { carsFilter } from '../../Redux/Filter/slice';
+import { useState } from 'react';
+
 export const InputFromTo = () => {
+  const [mileageFrom, setMileageFrom] = useState('');
+  const [mileageTo, setMileageTo] = useState('');
+
+  const dispatch = useDispatch();
+
+  const handleMileageFromChange = (e) => {
+    const value = e.target.value;
+    const numericValue = parseFloat(value);
+    setMileageFrom(value);
+    dispatch(carsFilter({ field: 'mileageFrom', value: numericValue }));
+  };
+
+  const handleMileageToChange = (e) => {
+    const value = e.target.value;
+    const numericValue = parseFloat(value);
+    setMileageTo(value);
+    dispatch(carsFilter({ field: 'mileageTo', value: numericValue }));
+  };
+
   return (
     <>
       <div>
@@ -17,6 +40,8 @@ export const InputFromTo = () => {
 			  dark:focus:border-blue-500"
             placeholder="From"
             required
+            value={mileageFrom}
+            onChange={handleMileageFromChange}
           />
           <input
             type="text"
@@ -26,6 +51,8 @@ export const InputFromTo = () => {
 			  dark:focus:border-blue-500"
             placeholder="To"
             required
+            value={mileageTo}
+            onChange={handleMileageToChange}
           />
         </div>
       </div>

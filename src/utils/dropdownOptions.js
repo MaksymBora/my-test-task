@@ -20,3 +20,13 @@ export const options = [
   { value: 'Kia', label: 'Kia' },
   { value: 'Land', label: 'Land' },
 ];
+
+const generatePriceArr = () => {
+  const options = [];
+  for (let i = 10; i <= 500; i += 10) {
+    options.push({ value: i, label: `${i}$` });
+  }
+  return options;
+};
+
+export const priceOptions = generatePriceArr();

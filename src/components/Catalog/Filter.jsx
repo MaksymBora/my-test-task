@@ -1,7 +1,7 @@
 import { Button } from '../common/Button';
 import { DropdownSelect } from '../common/DropdownSelect';
 import { InputFromTo } from './InputFromTo';
-import { options } from '../../utils/carMakersOptions';
+import { options, priceOptions } from '../../utils/dropdownOptions';
 import { useSelector } from 'react-redux';
 import { selectIsLoading } from '../../Redux/cars/selectors';
 import { selectFilterCars } from '../../Redux/Filter/selectors';
@@ -29,12 +29,15 @@ export const Filter = () => {
               title={'Car Brand'}
               placeholder={'Select a model'}
               options={options}
+              filterType={'maker'}
             />
 
             <DropdownSelect
               width={'w-[125px]'}
               title={'Price / 1hour'}
               placeholder={'To $'}
+              options={priceOptions}
+              filterType={'price'}
             />
             <InputFromTo />
 

@@ -7,7 +7,13 @@ import { carsFilter } from '../../Redux/Filter/slice';
 
 const animatedComponents = makeAnimated();
 
-export const DropdownSelect = ({ width, title, placeholder, options }) => {
+export const DropdownSelect = ({
+  width,
+  title,
+  placeholder,
+  options,
+  filterType,
+}) => {
   const data = useSelector(selectFilterCars);
   const dispatch = useDispatch();
 
@@ -22,8 +28,10 @@ export const DropdownSelect = ({ width, title, placeholder, options }) => {
   const handleMakerChange = (selectedOption) => {
     const value = selectedOption ? selectedOption.value : '';
 
-    dispatch(carsFilter({ field: 'maker', value }));
+    dispatch(carsFilter({ field: filterType, value }));
   };
+
+  const filterValue = data[filterType];
 
   return (
     <div className={width}>
@@ -35,8 +43,8 @@ export const DropdownSelect = ({ width, title, placeholder, options }) => {
         className="text-black"
         styles={dropdownStyles}
         value={
-          options && data.maker
-            ? options.find((option) => option.value === data.maker)
+          options && filterValue
+            ? options.find((option) => option.value === filterValue)
             : null
         }
         isSearchable={false}
