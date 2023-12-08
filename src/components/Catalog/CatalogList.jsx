@@ -14,14 +14,16 @@ export const CatalogList = () => {
   const allCars = useSelector(selectCars);
   const totalCarsInArr = useSelector(selectTotalCars);
   const isLoading = useSelector(selectIsLoading);
+
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(fetchAllCars(page));
   }, [dispatch, page]);
 
+  console.log(allCars, 'CatalogList');
   const handleLoadMore = () => {
-    setPage((prevState) => prevState + 1);
+    setPage((prevPage) => prevPage + 1);
   };
 
   return (
@@ -38,7 +40,7 @@ export const CatalogList = () => {
         })}
       </ul>
 
-      {totalCarsInArr >= 12 && !isLoading && (
+      {totalCarsInArr === 32 && !isLoading && (
         <button
           type="button"
           onClick={handleLoadMore}

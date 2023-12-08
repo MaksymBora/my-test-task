@@ -10,7 +10,7 @@ export const fetchAllCars = createAsyncThunk(
       url.searchParams.append('page', page);
       url.searchParams.append('limit', 12);
 
-      const response = await axios.get(url, page);
+      const response = await axios.get(url, (page = 1));
 
       return response.data;
     } catch (error) {

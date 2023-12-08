@@ -217,7 +217,7 @@ export const Modal = ({
                 </p>
               </div>
             </div>
-            {/* padding 12px */}
+
             <a
               href="tel:+380730000000"
               type="button"

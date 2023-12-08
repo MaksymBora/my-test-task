@@ -31,8 +31,8 @@ export const CardAuto = ({ carData }) => {
     id,
   } = carData;
 
-  const addressArray = address.split(', ');
-  const updateArray = addressArray.slice(-2);
+  const addressArray = address?.split(', ');
+  const updateArray = addressArray?.slice(-2);
 
   useEffect(() => {
     if (favoriteCars !== null) {
@@ -112,17 +112,17 @@ export const CardAuto = ({ carData }) => {
         <div className="text-cardOptionsColor text-xs leading-[18px] mb-7 ">
           <ul className="flex flex-row items-start flex-nowrap mb-[4px] ">
             <li className="relative inline-block pr-[6px] mr-[6px] border-r-[1px]">
-              <p>{updateArray[0]}</p>
+              <p>{updateArray[0] || ''}</p>
             </li>
             <li className="relative inline-block pr-[6px] mr-[6px] border-r-[1px]">
-              <p>{updateArray[1]}</p>
+              <p>{updateArray[1] || ''}</p>
             </li>
             <li className="relative inline-block pr-[6px] mr-[6px] border-r-[1px]">
               <p>{rentalCompany}</p>
             </li>
-            {/* <li className="relative inline-block pr-[6px] mr-[6px]">
+            <li className="relative inline-block pr-[6px] mr-[6px]">
               <p>Premium</p>
-            </li> */}
+            </li>
           </ul>
           {/* 2nd line */}
           <ul className="flex flex-row items-start flex-nowrap gap-y-1">

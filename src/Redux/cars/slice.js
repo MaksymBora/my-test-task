@@ -8,7 +8,8 @@ const handlePending = (state) => {
 const handleFulfilled = (state, action) => {
   state.isLoading = false;
 
-  state.catalog = action.payload;
+  state.catalog.push(...action.payload);
+
   state.error = null;
 };
 
