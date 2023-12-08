@@ -1,12 +1,11 @@
 import { useDispatch, useSelector } from 'react-redux';
-
 import { CardAuto } from './CardAuto';
 import {
   selectCars,
   selectIsLoading,
   selectTotalCars,
 } from '../../Redux/cars/selectors';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { fetchAllCars } from '../../Redux/cars/operations';
 
 export const CatalogList = () => {
@@ -16,12 +15,19 @@ export const CatalogList = () => {
   const isLoading = useSelector(selectIsLoading);
 
   const dispatch = useDispatch();
+  const initialized = useRef(false);
 
   useEffect(() => {
-    dispatch(fetchAllCars(page));
+    if (!initialized.current) {
+      initialized.current = true;
+      dispatch(fetchAllCars(page));
+    }
+  }, []);
+
+  useEffect(() => {
+    if (page !== 1) dispatch(fetchAllCars(page));
   }, [dispatch, page]);
 
-  console.log(allCars, 'CatalogList');
   const handleLoadMore = () => {
     setPage((prevPage) => prevPage + 1);
   };
@@ -40,7 +46,7 @@ export const CatalogList = () => {
         })}
       </ul>
 
-      {totalCarsInArr === 32 && !isLoading && (
+      {totalCarsInArr < 32 && !isLoading && (
         <button
           type="button"
           onClick={handleLoadMore}
