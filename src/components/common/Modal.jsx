@@ -1,8 +1,12 @@
 import { useEffect } from 'react';
-import modalimg from '../../assets/images/modalimg.png';
+
 import { Button } from './Button';
 
-export const Modal = ({ isOpenModalProp, handleModalCloseProp }) => {
+export const Modal = ({
+  isOpenModalProp,
+  handleModalCloseProp,
+  carDataProp,
+}) => {
   useEffect(() => {
     if (isOpenModalProp) {
       document.body.classList.add('overflow-y-hidden');
@@ -12,14 +16,64 @@ export const Modal = ({ isOpenModalProp, handleModalCloseProp }) => {
   }, [isOpenModalProp]);
 
   useEffect(() => {
-    const close = (e) => {
-      if (e.keyCode === 27) {
+    const handleKeyDown = (event) => {
+      if (event.key === 'Escape') {
         handleModalCloseProp();
       }
     };
-    window.addEventListener('keydown', close);
-    return () => window.removeEventListener('keydown', close);
-  }, []);
+
+    if (isOpenModalProp) {
+      document.addEventListener('keydown', handleKeyDown);
+    } else {
+      document.removeEventListener('keydown', handleKeyDown);
+    }
+
+    return () => {
+      document.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [isOpenModalProp, handleModalCloseProp]);
+
+  const {
+    id,
+    make,
+    year,
+    model,
+    type,
+    img,
+    functionalities,
+    rentalCompany,
+    address,
+    rentalPrice,
+    accessories,
+    mileage,
+    description,
+    rentalConditions,
+  } = carDataProp;
+
+  const addressArray = address.split(', ');
+  const updateArray = addressArray.slice(-2);
+
+  const listData = [
+    updateArray[0],
+    updateArray[1],
+    rentalCompany,
+    'Premium',
+    type,
+    model,
+    mileage,
+    functionalities[0],
+  ];
+
+  const minimumAgeRegex = /Minimum age: (\d+)/;
+  const match = rentalConditions.match(minimumAgeRegex);
+
+  const minAge = match && match[1] ? match[1] : 18;
+
+  const conditionsArray = rentalConditions.split('\n');
+
+  const mileAgeString = String(mileage);
+  const updatedMileAge =
+    mileAgeString.slice(0, 1) + ',' + mileAgeString.slice(1);
 
   return (
     <>
@@ -36,7 +90,10 @@ export const Modal = ({ isOpenModalProp, handleModalCloseProp }) => {
       >
         <div className="absolute w-full max-w-full">
           {/*  Modal content */}
-          <div className="relative max-w-[541px] p-[40px] left-[50%] top-[50%] translate-x-[-50%]  bg-white rounded-[24px] shadow dark:bg-gray-700">
+          <div
+            onClick={(e) => e.stopPropagation()}
+            className="relative max-w-[541px] p-[40px] left-[50%] top-[50%] translate-x-[-50%]  bg-white rounded-[24px] shadow dark:bg-gray-700"
+          >
             {/*  Modal header  */}
             <div className="flex items-center justify-between rounded-t ">
               {/* -------- Close Modal Button ------- */}
@@ -68,114 +125,102 @@ export const Modal = ({ isOpenModalProp, handleModalCloseProp }) => {
             </div>
             {/* --------- Modal body -------- */}
             <div className="">
-              <img src={modalimg} className="rounded-[14px]" />
+              <img src={img} className="rounded-[14px]" />
 
-              <h2 className="mt-[14px] mb-2 text-lg leading-6 font-medium text-darkFontColor dark:text-white">
-                Buick <span className="text-lightBlueColor">Eclave</span>, 2008
+              <h2 className="mt-[14px] mb-[8px] text-lg leading-6 font-medium text-darkFontColor dark:text-white">
+                {make} <span className="text-lightBlueColor">{model}</span>,{' '}
+                {year}
               </h2>
 
               <div className="text-cardOptionsColor text-xs leading-[18px] mb-[14px]">
                 <ul className="flex flex-row items-start flex-wrap gap-y-1">
-                  <li className="relative inline-block pr-[6px] mr-[6px] border-r-[1px]">
-                    <p>Kiev</p>
-                  </li>
-                  <li className="relative inline-block pr-[6px] mr-[6px] border-r-[1px]">
-                    <p>Ukraine</p>
-                  </li>
-                  <li className="relative inline-block pr-[6px] mr-[6px] border-r-[1px]">
-                    <p>Luxury Car Rentals</p>
-                  </li>
-                  <li className="relative inline-block pr-[6px] mr-[6px] border-r-[1px]">
-                    <p>Premiem</p>
-                  </li>
-                  <li className="relative inline-block pr-[6px] mr-[6px] border-r-[1px]">
-                    <p>Suv</p>
-                  </li>
-                  <li className="relative inline-block pr-[6px] mr-[6px] border-r-[1px]">
-                    <p>Enclave</p>
-                  </li>
-                  <li className="relative inline-block pr-[6px] mr-[6px] border-r-[1px]">
-                    <p>9582</p>
-                  </li>
-                  <li className="relative inline-block pr-[6px] mr-[6px] border-r-[1px]">
-                    <p>Power liftgate </p>
-                  </li>
+                  {listData.map((item, index) => (
+                    <li
+                      key={index}
+                      className="relative inline-block pr-[6px] mr-[6px] border-r-[1px] last:border-0"
+                    >
+                      <p>{item}</p>
+                    </li>
+                  ))}
                 </ul>
               </div>
               <p className="mb-[24px] text-sm text-darkFontColor dark:text-white">
-                The Buick Enclave is a stylish and spacious SUV known for its
-                comfortable ride and luxurious features.
+                {description}
               </p>
 
               {/* ---------- Accessories ---------- */}
               <div className="mb-[24px]">
-                <p className="mb-2 text-sm text-darkFontColor dark:text-white">
+                <p className="mb-[8px] text-sm text-darkFontColor dark:text-white">
                   Accessories and functionalities:
                 </p>
 
-                <div className="text-cardOptionsColor text-xs leading-[18px] mb-7">
+                <div className="text-cardOptionsColor text-xs leading-[18px] mb-[24px]">
+                  <ul className="flex flex-row items-start flex-wrap gap-y-1 mb-[4px]">
+                    {accessories.map((item, index) => (
+                      <li
+                        key={`${id}-${index}`}
+                        className="relative inline-block pr-[6px] mr-[6px] border-r-[1px] last:border-0"
+                      >
+                        <p>{item}</p>
+                      </li>
+                    ))}
+                  </ul>
+
                   <ul className="flex flex-row items-start flex-wrap gap-y-1">
-                    <li className="relative inline-block pr-[6px] mr-[6px] border-r-[1px]">
-                      <p>Leather seats</p>
-                    </li>
-                    <li className="relative inline-block pr-[6px] mr-[6px] border-r-[1px]">
-                      <p>Panoramic sunroof</p>
-                    </li>
-                    <li className="relative inline-block pr-[6px] mr-[6px] border-r-[1px]">
-                      <p>Power liftgate</p>
-                    </li>
-                    <li className="relative inline-block pr-[6px] mr-[6px] border-r-[1px]">
-                      <p>Premium audio system</p>
-                    </li>
-                    <li className="relative inline-block pr-[6px] mr-[6px] border-r-[1px]">
-                      <p>Remote start</p>
-                    </li>
-                    <li className="relative inline-block pr-[6px] mr-[6px] border-r-[1px]">
-                      <p>Blind-spot monitoring</p>
-                    </li>
-                    <li className="relative inline-block pr-[6px] mr-[6px] border-r-[1px]">
-                      <p>9582</p>
-                    </li>
-                    <li className="relative inline-block pr-[6px] mr-[6px] border-r-[1px]">
-                      <p>Power liftgate </p>
-                    </li>
+                    {functionalities.map((item, index) => (
+                      <li
+                        key={`${id}-${index}`}
+                        className="relative inline-block pr-[6px] mr-[6px] border-r-[1px] last:border-0"
+                      >
+                        <p>{item}</p>
+                      </li>
+                    ))}
                   </ul>
                 </div>
               </div>
 
               {/*---------- Rental Conditions ---------*/}
-              <h3 className="mb-2 text-sm text-darkFontColor dark:text-white font-medium">
+              <h3 className="mb-[8px] text-sm text-darkFontColor dark:text-white font-medium">
                 Rental Conditions:{' '}
               </h3>
-              <div className="mb-[24px] flex flex-wrap gap-2">
+              <div className="mb-[24px] flex flex-wrap gap-[8px] items-center justify-start">
                 <p className="text-modalRentalColor darl:text-white text-xs leading-[18px] bg-[#f9f9f9] rounded-[35px] py-[7px] px-[14px]">
                   Minimum age :{' '}
                   <span className="text-lightBlueColor text-xs leading-[18px] font-semibold -tracking-[0.24]">
-                    25
+                    {minAge}
                   </span>
                 </p>
                 <p className="text-modalRentalColor darl:text-white text-xs leading-[18px] bg-[#f9f9f9] rounded-[35px] py-[7px] px-[14px]">
-                  Valid driver&rsquo;s license
+                  {conditionsArray[1]}
                 </p>
                 <p className="text-modalRentalColor darl:text-white text-xs leading-[18px] bg-[#f9f9f9] rounded-[35px] py-[7px] px-[14px]">
-                  Security deposite required{' '}
+                  {conditionsArray[2]}
                 </p>
                 <p className="text-modalRentalColor darl:text-white text-xs leading-[18px] bg-[#f9f9f9] rounded-[35px] py-[7px] px-[14px]">
                   Mileage:{' '}
                   <span className="text-lightBlueColor text-xs leading-[18px] font-semibold -tracking-[0.24]">
-                    5,858
+                    {updatedMileAge}
                   </span>
                 </p>
                 <p className="text-modalRentalColor darl:text-white text-xs leading-[18px] bg-[#f9f9f9] rounded-[35px] py-[7px] px-[14px]">
                   Price:{' '}
                   <span className="text-lightBlueColor text-xs leading-[18px] font-semibold -tracking-[0.24]">
-                    40$
+                    {rentalPrice.slice(1) + '$'}
                   </span>
                 </p>
               </div>
             </div>
             {/* padding 12px */}
-            <Button title={'Rental car'} width={'168px'} />
+            <a
+              href="tel:+380730000000"
+              type="button"
+              className="w-[168px] m-0 py-[12px] px-[50px] border-none text-white bg-gradient-to-r text-[14px] leading-[20px] self-center from-blue-500
+	   via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 
+	   focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium 
+	   rounded-lg text-sm px-auto  text-center cursor-pointer"
+            >
+              Rental car
+            </a>
           </div>
         </div>
       </div>

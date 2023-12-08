@@ -2,8 +2,10 @@ import { useState } from 'react';
 import { Button } from '../common/Button';
 import { Modal } from '../common/Modal';
 
-export const CardAuto = ({
-  carData: {
+export const CardAuto = ({ carData }) => {
+  const [isOpenModal, setIsOpenModal] = useState(false);
+
+  const {
     make,
     year,
     model,
@@ -14,9 +16,8 @@ export const CardAuto = ({
     address,
     rentalPrice,
     mileage,
-  },
-}) => {
-  const [isOpenModal, setIsOpenModal] = useState(false);
+  } = carData;
+
   const addressArray = address.split(', ');
   const updateArray = addressArray.slice(-2);
 
@@ -106,6 +107,7 @@ export const CardAuto = ({
       <Modal
         isOpenModalProp={isOpenModal}
         handleModalCloseProp={handleModalClose}
+        carDataProp={carData}
       />
     </>
   );
