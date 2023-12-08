@@ -1,7 +1,7 @@
-export const Button = ({ width, title, onClick }) => {
+export const Button = ({ width, title, onClick, type }) => {
   return (
     <button
-      type="button"
+      type={type ? type : 'button'}
       onClick={onClick}
       className={`${
         width && width
