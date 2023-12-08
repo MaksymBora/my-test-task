@@ -3,12 +3,12 @@ import { Filter } from '../components/Catalog/Filter';
 
 const Catalog = () => {
   return (
-    <div className="md:max-w-[1280px] p-4 md:px-4 mx-auto">
+    <>
       <Filter />
-      <section className="pb-[100px]">
+      <section className="pb-[100px] md:max-w-[1280px] min-h-[calc(100vh-308px)] p-4 md:px-4 mx-auto">
         <CatalogList />
       </section>
-    </div>
+    </>
   );
 };
 
