@@ -28,3 +28,5 @@ export const persistedCarsReducer = persistReducer(
   persistConfig,
   favoritesCarsReducer
 );
+
+export const { addToFavorites, removeFromFavorites } = slice.actions;
