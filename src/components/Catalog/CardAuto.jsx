@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Button } from '../common/Button';
 import { Modal } from '../common/Modal';
+import noresponse from '../../assets/images/noresponse.jpg';
 
 export const CardAuto = ({ carData }) => {
   const [isOpenModal, setIsOpenModal] = useState(false);
@@ -29,12 +30,17 @@ export const CardAuto = ({ carData }) => {
     if (isOpenModal) setIsOpenModal(false);
   };
 
+  const handleImageError = (event) => {
+    event.target.src = noresponse;
+  };
+
   return (
     <>
       <div className="w-[274px] bg-transparent">
         <div className="relative">
           <img
             src={img}
+            onError={handleImageError}
             alt={make}
             loading="lazy"
             height="268"

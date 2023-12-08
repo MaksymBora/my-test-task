@@ -11,7 +11,7 @@ export const CatalogList = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(fetchAllCars());
+    dispatch(fetchAllCars(2));
   }, [dispatch]);
 
   return (
