@@ -60,7 +60,7 @@ export const Navbar = () => {
                 className={`block pb-[8px] px-[12px] pt-[24px] md:pt-[24px] md:pb-[14px] text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent 
                 md:border-0 md:hover:text-blue-700 dark:text-white 
                 md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent 
-                cursor-pointer hover:animate-bounce ${
+                cursor-pointer hover:animate-pulse ${
                   pathname === '/' &&
                   'md:border-b md:border-indigo-700 md:rounded-none'
                 }`}
@@ -76,7 +76,7 @@ export const Navbar = () => {
                 to="/catalog"
                 className={`block py-2 px-3 md:pt-[24px] md:pb-[14px] text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0
                  md:hover:text-blue-700 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 
-                 dark:hover:text-white md:dark:hover:bg-transparent cursor-pointer hover:animate-bounce ${
+                 dark:hover:text-white md:dark:hover:bg-transparent cursor-pointer hover:animate-pulse ${
                    pathname === '/catalog' &&
                    'md:border-b md:border-indigo-700 md:rounded-none'
                  }`}
@@ -90,7 +90,9 @@ export const Navbar = () => {
             <li>
               <Link
                 to="/favorites"
-                className={`block py-2 px-3 md:pt-[24px] md:pb-[14px] text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent cursor-pointer hover:animate-bounce ${
+                className={`block py-2 px-3 md:pt-[24px] md:pb-[14px] text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 
+                md:hover:text-blue-700 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white 
+                md:dark:hover:bg-transparent cursor-pointer hover:animate-pulse ${
                   pathname === '/favorites' &&
                   'md:border-b md:border-indigo-700 md:rounded-none'
                 }`}
