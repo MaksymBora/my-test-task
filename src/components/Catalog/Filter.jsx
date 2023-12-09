@@ -2,18 +2,21 @@ import { Button } from '../common/Button';
 import { DropdownSelect } from '../common/DropdownSelect';
 import { InputFromTo } from './InputFromTo';
 import { options, priceOptions } from '../../utils/dropdownOptions';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { selectIsLoading } from '../../Redux/cars/selectors';
 import { selectFilterCars } from '../../Redux/Filter/selectors';
+import { fetchFilteredAllCars } from '../../Redux/cars/operations';
 
 export const Filter = () => {
   const isLoading = useSelector(selectIsLoading);
   const formData = useSelector(selectFilterCars);
 
+  const dispatch = useDispatch();
+
   const applyFilter = (e) => {
     e.preventDefault();
 
-    console.log(formData, 'FormData in Filter Form');
+    dispatch(fetchFilteredAllCars(formData));
   };
 
   return (
@@ -29,7 +32,7 @@ export const Filter = () => {
               title={'Car Brand'}
               placeholder={'Select a model'}
               options={options}
-              filterType={'maker'}
+              filterType={'make'}
             />
 
             <DropdownSelect

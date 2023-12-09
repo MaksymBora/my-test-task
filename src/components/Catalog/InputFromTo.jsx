@@ -1,25 +1,29 @@
-import { useDispatch } from 'react-redux';
-import { carsFilter } from '../../Redux/Filter/slice';
 import { useState } from 'react';
 
-export const InputFromTo = () => {
+export const InputFromTo = ({ setDataFromForm }) => {
   const [mileageFrom, setMileageFrom] = useState('');
   const [mileageTo, setMileageTo] = useState('');
-
-  const dispatch = useDispatch();
 
   const handleMileageFromChange = (e) => {
     const value = e.target.value;
     const numericValue = parseFloat(value);
     setMileageFrom(value);
-    dispatch(carsFilter({ field: 'mileageFrom', value: numericValue }));
+
+    setDataFromForm((prevState) => ({
+      ...prevState,
+      mileageFrom: numericValue,
+    }));
   };
 
   const handleMileageToChange = (e) => {
     const value = e.target.value;
     const numericValue = parseFloat(value);
     setMileageTo(value);
-    dispatch(carsFilter({ field: 'mileageTo', value: numericValue }));
+
+    setDataFromForm((prevState) => ({
+      ...prevState,
+      mileageTo: numericValue,
+    }));
   };
 
   return (
@@ -39,7 +43,6 @@ export const InputFromTo = () => {
 			  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 
 			  dark:focus:border-blue-500"
             placeholder="From"
-            required
             value={mileageFrom}
             onChange={handleMileageFromChange}
           />
@@ -50,7 +53,6 @@ export const InputFromTo = () => {
 			  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 
 			  dark:focus:border-blue-500"
             placeholder="To"
-            required
             value={mileageTo}
             onChange={handleMileageToChange}
           />

@@ -31,7 +31,7 @@ export const CatalogList = () => {
   const handleLoadMore = () => {
     setPage((prevPage) => prevPage + 1);
   };
-
+  console.log(totalCarsInArr);
   return (
     <>
       <ul className="mb-[100px] flex justify-start items-center flex-wrap gap-[29px]">
@@ -46,7 +46,7 @@ export const CatalogList = () => {
         })}
       </ul>
 
-      {totalCarsInArr < 32 && !isLoading && (
+      {totalCarsInArr > 0 && totalCarsInArr < 32 && !isLoading && (
         <button
           type="button"
           onClick={handleLoadMore}
@@ -56,7 +56,15 @@ export const CatalogList = () => {
         </button>
       )}
 
-      {totalCarsInArr >= 12 && isLoading && (
+      {totalCarsInArr === 0 && (
+        <div className="w-full h-full flex">
+          <h2 className="m-auto text-center text-2xl text-darkFontColor dark:text-white">
+            Cars Not Found 😊 Try another options.
+          </h2>
+        </div>
+      )}
+
+      {isLoading && (
         <div className="w-full flex justify-center mx-auto">Loading...</div>
       )}
     </>

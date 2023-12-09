@@ -1,10 +1,10 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialValuesState = {
-  maker: null,
+  make: null,
   price: null,
   mileageFrom: 0,
-  mileageTo: 999999,
+  mileageTo: 0,
 };
 const slice = createSlice({
   name: 'filter',
@@ -13,8 +13,7 @@ const slice = createSlice({
   },
   reducers: {
     carsFilter(state, action) {
-      const { field, value } = action.payload;
-      state.formData[field] = value;
+      state.formData = { ...state.formData, ...action.payload };
     },
   },
 });

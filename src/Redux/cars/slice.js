@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { fetchAllCars } from './operations';
+import { fetchAllCars, fetchFilteredAllCars } from './operations';
 
 const handlePending = (state) => {
   state.isLoading = true;
@@ -13,6 +13,14 @@ const handleFulfilled = (state, action) => {
   state.error = null;
 };
 
+const handleFilteredFulfilled = (state, action) => {
+  state.isLoading = false;
+
+  state.catalog = action.payload;
+
+  state.error = null;
+};
+
 const handleRejected = (state, action) => {
   state.isLoading = false;
   state.error = action.payload;
@@ -22,6 +30,7 @@ const slice = createSlice({
   name: 'cars',
   initialState: {
     catalog: [],
+
     isLoading: false,
     error: null,
   },
@@ -29,7 +38,10 @@ const slice = createSlice({
     builder
       .addCase(fetchAllCars.pending, handlePending)
       .addCase(fetchAllCars.fulfilled, handleFulfilled)
-      .addCase(fetchAllCars.rejected, handleRejected);
+      .addCase(fetchAllCars.rejected, handleRejected)
+      .addCase(fetchFilteredAllCars.pending, handlePending)
+      .addCase(fetchFilteredAllCars.fulfilled, handleFilteredFulfilled)
+      .addCase(fetchFilteredAllCars.rejected, handleRejected);
   },
 });
 

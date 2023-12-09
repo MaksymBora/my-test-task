@@ -1,11 +1,14 @@
 import Select from 'react-select';
 import makeAnimated from 'react-select/animated';
 import { dropdownStyles } from '../../utils/dropdownStyles';
+import { nanoid } from 'nanoid';
 import { useDispatch, useSelector } from 'react-redux';
-import { selectFilterCars } from '../../Redux/Filter/selectors';
 import { carsFilter } from '../../Redux/Filter/slice';
+import { selectFilterCars } from '../../Redux/Filter/selectors';
+import { useState } from 'react';
 
 const animatedComponents = makeAnimated();
+const uniqueId = nanoid();
 
 export const DropdownSelect = ({
   width,
@@ -14,9 +17,8 @@ export const DropdownSelect = ({
   options,
   filterType,
 }) => {
-  const data = useSelector(selectFilterCars);
+  const [selectedValue, setSelectedValue] = useState('');
   const dispatch = useDispatch();
-
   const indicatorSeparatorStyle = {
     display: 'none',
   };
@@ -25,13 +27,12 @@ export const DropdownSelect = ({
     return <span style={indicatorSeparatorStyle} {...innerProps} />;
   };
 
-  const handleMakerChange = (selectedOption) => {
+  const handleDataChange = (selectedOption) => {
     const value = selectedOption ? selectedOption.value : '';
 
-    dispatch(carsFilter({ field: filterType, value }));
+    dispatch(carsFilter({ [filterType]: value }));
+    setSelectedValue(value);
   };
-
-  const filterValue = data[filterType];
 
   return (
     <div className={width}>
@@ -39,17 +40,14 @@ export const DropdownSelect = ({
         {title}
       </h3>
       <Select
+        id={uniqueId}
         options={options}
         className="text-black"
         styles={dropdownStyles}
-        value={
-          options && filterValue
-            ? options.find((option) => option.value === filterValue)
-            : null
-        }
+        value={options.find((option) => option.value === selectedValue)}
         isSearchable={false}
         isMulti={false}
-        onChange={handleMakerChange}
+        onChange={handleDataChange}
         components={(animatedComponents, { IndicatorSeparator })}
         placeholder={placeholder}
       />
