@@ -49,6 +49,7 @@ export const Filter = () => {
                 title={'Search'}
                 width={'min-w-[136px]'}
                 type={'submit'}
+                paddingY={'py-[14px]'}
               />
             </div>
           </form>

@@ -38,9 +38,11 @@ export const InputFromTo = ({ setDataFromForm }) => {
         <div className="flex">
           <input
             type="text"
-            id="first_name"
-            className="w-[160px] bg-[#F7F7FB] rounded-s-[14px] border-r-[1px] border-r-borderInputColor border-l-0 border-t-0 border-b-0 py-[14px] px-[24px] text-lg leading-[20px] font-medium text-darkFontColor placeholder-darkFontColor  focus:ring-blue-500 focus:border-blue-500 block 
-			  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 
+            id="from"
+            className="w-[160px] bg-[#F7F7FB] rounded-s-[14px] border-r-[1px] border-l-0 border-t-0 border-b-0
+            border-r-borderInputColor py-[14px] px-[24px] text-lg outline-[1px]
+            leading-[20px] font-medium text-darkFontColor placeholder-darkFontColor  focus:border-blue-500 block 
+			  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white 
 			  dark:focus:border-blue-500"
             placeholder="From"
             value={mileageFrom}
@@ -48,7 +50,7 @@ export const InputFromTo = ({ setDataFromForm }) => {
           />
           <input
             type="text"
-            id="first_name"
+            id="to"
             className="w-[160px] bg-[#F7F7FB] border-none rounded-e-[14px] py-[14px] px-[24px] text-lg leading-[20px] font-medium text-darkFontColor placeholder-darkFontColor  focus:ring-blue-500 focus:border-blue-500 block 
 			  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 
 			  dark:focus:border-blue-500"
