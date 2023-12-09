@@ -1,6 +1,6 @@
 import { Button } from '../common/Button';
-import { DropdownSelect } from '../common/DropdownSelect';
-import { InputFromTo } from '../Catalog/InputFromTo';
+import { DropdownSelect } from './DropdownSelect';
+import { InputFromTo } from './InputFromTo';
 import { options, priceOptions } from '../../utils/dropdownOptions';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectFilterCars } from '../../Redux/Filter/selectors';
@@ -33,6 +33,10 @@ export const Filter = () => {
             placeholder={'Select a model'}
             options={options}
             filterType={'make'}
+            classNames={{
+              control: (state) =>
+                state.darkTheme ? 'bg-red-500' : 'bg-green-500',
+            }}
           />
 
           <DropdownSelect

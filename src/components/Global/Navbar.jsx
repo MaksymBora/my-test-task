@@ -12,8 +12,6 @@ export const Navbar = () => {
   const { pathname } = useLocation();
   const darkTheme = useSelector(selectCurrentTheme);
 
-  console.log(darkTheme, 'Dark Theme');
-
   const dispatch = useDispatch();
 
   useEffect(() => {

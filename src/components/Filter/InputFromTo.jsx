@@ -39,11 +39,7 @@ export const InputFromTo = ({ setDataFromForm }) => {
           <input
             type="text"
             id="from"
-            className="w-[160px] bg-[#F7F7FB] rounded-s-[14px] border-r-[1px] border-l-0 border-t-0 border-b-0
-            border-r-borderInputColor py-[14px] px-[24px] text-lg outline-[1px]
-            leading-[20px] font-medium text-darkFontColor placeholder-darkFontColor  focus:border-blue-500 block 
-			  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white 
-			  dark:focus:border-blue-500"
+            className="w-[160px] inputFromTo"
             placeholder="From"
             value={mileageFrom}
             onChange={handleMileageFromChange}

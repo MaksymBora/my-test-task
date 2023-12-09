@@ -1,11 +1,14 @@
 import Select from 'react-select';
 import makeAnimated from 'react-select/animated';
-import { dropdownStyles } from '../../utils/dropdownStyles';
+import {
+  dropdownStylesDark,
+  dropdownStylesLight,
+} from '../../utils/dropdownStyles';
 import { nanoid } from 'nanoid';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { carsFilter } from '../../Redux/Filter/slice';
-
 import { useState } from 'react';
+import { selectCurrentTheme } from '../../Redux/Theme/selectors';
 
 const animatedComponents = makeAnimated();
 const uniqueId = nanoid();
@@ -22,6 +25,7 @@ export const DropdownSelect = ({
   const indicatorSeparatorStyle = {
     display: 'none',
   };
+  const darkTheme = useSelector(selectCurrentTheme);
 
   const IndicatorSeparator = ({ innerProps }) => {
     return <span style={indicatorSeparatorStyle} {...innerProps} />;
@@ -34,6 +38,8 @@ export const DropdownSelect = ({
     setSelectedValue(value);
   };
 
+  const customStyles = darkTheme ? dropdownStylesDark : dropdownStylesLight;
+
   return (
     <div className={width}>
       <h3 className="text-sm font-medium text-labelsColor dark:text-white mb-2">
@@ -42,8 +48,7 @@ export const DropdownSelect = ({
       <Select
         id={uniqueId}
         options={options}
-        className="text-black"
-        styles={dropdownStyles}
+        styles={customStyles}
         value={options.find((option) => option.value === selectedValue)}
         isSearchable={false}
         isMulti={false}
