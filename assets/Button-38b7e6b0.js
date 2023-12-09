@@ -1,0 +1,1 @@
+import{j as s}from"./index-67199079.js";const m=({width:t,title:o,onClick:p,type:r,paddingY:n})=>s.jsx("button",{type:r||"button",onClick:p,className:`${t&&t} min-w-[150px] m-0 ${n||"py-[12px]"} px-[44px] btn-primary`,children:o});export{m as B};
