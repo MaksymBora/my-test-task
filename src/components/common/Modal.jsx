@@ -91,13 +91,13 @@ export const Modal = ({
         className={`${
           isOpenModalProp ? '' : 'hidden'
         } fix bg-backdropColor overflow-y-auto overflow-x-hidden fixed top-0 right-0 
-        left-0 z-50 justify-center items-center w-full md:inset-0 h-full `}
+        left-0 z-50 flex justify-center items-center w-full md:inset-0 h-full `}
       >
         <div className="absolute w-full max-w-full">
           {/*  Modal content */}
           <div
             onClick={(e) => e.stopPropagation()}
-            className="relative max-w-[541px] p-[40px] left-[50%] top-[50%] translate-x-[-50%]  bg-white rounded-[24px] shadow dark:bg-gray-700"
+            className="relative max-w-[541px] p-[40px] left-[50%] top-[50%] translate-x-[-50%] bg-white rounded-[24px] shadow dark:bg-gray-700"
           >
             {/*  Modal header  */}
             <div className="flex items-center justify-between rounded-t ">
