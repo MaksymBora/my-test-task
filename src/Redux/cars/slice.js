@@ -11,6 +11,7 @@ const handleFulfilled = (state, action) => {
   state.catalog.push(...action.payload);
 
   state.error = null;
+  state.isFilter = false;
 };
 
 const handleFilteredFulfilled = (state, action) => {
@@ -19,6 +20,7 @@ const handleFilteredFulfilled = (state, action) => {
   state.catalog = action.payload;
 
   state.error = null;
+  state.isFilter = true;
 };
 
 const handleRejected = (state, action) => {
@@ -30,9 +32,9 @@ const slice = createSlice({
   name: 'cars',
   initialState: {
     catalog: [],
-
     isLoading: false,
     error: null,
+    isFilter: false,
   },
   extraReducers: (builder) => {
     builder

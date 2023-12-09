@@ -8,6 +8,8 @@ export const selectTotalCars = (state) => state.cars.catalog.length;
 
 export const selectFilterCars = (state) => state.filter.formData;
 
+export const selectIsFilterOn = (state) => state.cars.isFilter;
+
 // export const selectFilteredCarsList = createSelector(
 //   [selectAllCarsList, selectFilterCars],
 //   (cars, dataFromFilter) => {

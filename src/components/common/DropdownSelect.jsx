@@ -2,9 +2,9 @@ import Select from 'react-select';
 import makeAnimated from 'react-select/animated';
 import { dropdownStyles } from '../../utils/dropdownStyles';
 import { nanoid } from 'nanoid';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { carsFilter } from '../../Redux/Filter/slice';
-import { selectFilterCars } from '../../Redux/Filter/selectors';
+
 import { useState } from 'react';
 
 const animatedComponents = makeAnimated();

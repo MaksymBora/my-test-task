@@ -2,17 +2,20 @@ import { useDispatch, useSelector } from 'react-redux';
 import { CardAuto } from './CardAuto';
 import {
   selectCars,
+  selectIsFilterOn,
   selectIsLoading,
   selectTotalCars,
 } from '../../Redux/cars/selectors';
 import { useEffect, useRef, useState } from 'react';
 import { fetchAllCars } from '../../Redux/cars/operations';
+import { Loader } from '../../utils/Loader';
 
 export const CatalogList = () => {
   const [page, setPage] = useState(1);
   const allCars = useSelector(selectCars);
   const totalCarsInArr = useSelector(selectTotalCars);
   const isLoading = useSelector(selectIsLoading);
+  const isFilter = useSelector(selectIsFilterOn);
 
   const dispatch = useDispatch();
   const initialized = useRef(false);
@@ -31,7 +34,7 @@ export const CatalogList = () => {
   const handleLoadMore = () => {
     setPage((prevPage) => prevPage + 1);
   };
-  console.log(totalCarsInArr);
+
   return (
     <>
       <ul className="mb-[100px] flex justify-start items-center flex-wrap gap-[29px]">
@@ -46,7 +49,7 @@ export const CatalogList = () => {
         })}
       </ul>
 
-      {totalCarsInArr > 0 && totalCarsInArr < 32 && !isLoading && (
+      {totalCarsInArr > 0 && totalCarsInArr < 32 && !isLoading && !isFilter && (
         <button
           type="button"
           onClick={handleLoadMore}
@@ -65,7 +68,9 @@ export const CatalogList = () => {
       )}
 
       {isLoading && (
-        <div className="w-full flex justify-center mx-auto">Loading...</div>
+        <div className="w-full flex justify-center mx-auto">
+          <Loader />
+        </div>
       )}
     </>
   );
