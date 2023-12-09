@@ -22,10 +22,10 @@ export const Filter = () => {
 
   return (
     <>
-      <section className="py-[50px]">
+      <section className="py-[20px] px-[15px] mx-auto md:py-[50px] md:max-w-[1280px] md:px-[16px]">
         <form
           onSubmit={applyFilter}
-          className="flex justify-center gap-[18px]  flex-col md:flex-row "
+          className="flex gap-[10px] mx-auto flex-wrap md:justify-center md:gap-[18px] md:flex-row"
         >
           <DropdownSelect
             width={'w-[224px]'}

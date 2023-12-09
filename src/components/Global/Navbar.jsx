@@ -2,6 +2,8 @@ import { useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import logo from '../../assets/logo.svg';
+import { IoMoon } from 'react-icons/io5';
+// import { IoMoon, IoSunny } from 'react-icons/io5';
 
 export const Navbar = () => {
   const [isMenu, setIsMenu] = useState(false);
@@ -12,8 +14,8 @@ export const Navbar = () => {
   };
 
   return (
-    <nav className="border-gray-200 shadow-md bg-gray-50 dark:bg-gray-800 dark:border-gray-700">
-      <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto px-[15px]">
+    <nav className="border-gray-200 shadow-md bg-gray-50 dark:bg-gray-800 dark:border-gray-700 p-[10px] md:p-0">
+      <div className="max-w-[1280px] flex flex-wrap items-center justify-between mx-auto px-[15px]">
         <a href="/" className="flex items-center space-x-3 rtl:space-x-reverse">
           <img src={logo} className="h-8 " alt="Flowbite Logo" />
           <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
@@ -48,6 +50,16 @@ export const Navbar = () => {
             />
           </svg>
         </button>
+
+        {/* <IoSunny
+            // onClick={toggleUiTheme}
+            className="cursor-pointer text-black dark:text-mainTextColo hidden md:block text-[21px] ml-auto mt-[8px] mr-[40px]"
+          /> */}
+
+        <IoMoon
+          // onClick={toggleUiTheme}
+          className="cursor-pointer text-black dark:text-mainTextColo hidden md:block text-[21px] ml-auto mt-[8px] mr-[40px]"
+        />
 
         <div
           className={`${isMenu ? 'block' : 'hidden'} w-full md:block md:w-auto`}
