@@ -33,7 +33,10 @@ export const Navbar = () => {
   return (
     <nav className="border-gray-200 shadow-md bg-gray-50 dark:bg-gray-800 dark:border-gray-700 p-[10px] md:p-0">
       <div className="max-w-[1280px] flex flex-wrap items-center justify-between mx-auto px-[15px]">
-        <a href="/" className="flex items-center space-x-3 rtl:space-x-reverse">
+        <a
+          href="/"
+          className="flex items-center space-x-3 rtl:space-x-reverse font-logo font-medium"
+        >
           <img src={logo} className="h-8 " alt="Flowbite Logo" />
           <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
             <span className="text-logoColor">R</span>ent{' '}
