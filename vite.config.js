@@ -12,5 +12,13 @@ export default defineConfig({
       },
     ],
   },
-  base: '/my-test-task/',
+  // base: '/my-test-task/',
+  base: './',
+  build: {
+    outDir: './dist',
+    commonjsOptions: {
+      transformMixedEsModules: true,
+      // include: [/linked-dep/, /node_modules/],
+    },
+  },
 });
