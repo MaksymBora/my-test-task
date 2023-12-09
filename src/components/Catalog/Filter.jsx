@@ -3,7 +3,6 @@ import { DropdownSelect } from '../common/DropdownSelect';
 import { InputFromTo } from './InputFromTo';
 import { options, priceOptions } from '../../utils/dropdownOptions';
 import { useDispatch, useSelector } from 'react-redux';
-import { selectIsLoading } from '../../Redux/cars/selectors';
 import { selectFilterCars } from '../../Redux/Filter/selectors';
 import { fetchFilteredAllCars } from '../../Redux/cars/operations';
 import { Suspense } from 'react';
@@ -11,7 +10,6 @@ import { Loader } from '../../utils/Loader';
 import { Outlet } from 'react-router-dom';
 
 export const Filter = () => {
-  const isLoading = useSelector(selectIsLoading);
   const formData = useSelector(selectFilterCars);
 
   const dispatch = useDispatch();

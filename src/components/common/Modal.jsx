@@ -47,6 +47,8 @@ export const Modal = ({
     mileage,
     description,
     rentalConditions,
+    engineSize,
+    fuelConsumption,
   } = carDataProp;
 
   const addressArray = address.split(', ');
@@ -131,7 +133,8 @@ export const Modal = ({
               <img
                 src={img}
                 onError={handleImageError}
-                className="rounded-[14px]"
+                className="rounded-[14px] h-[248px]"
+                width="461"
               />
 
               <h2 className="mt-[14px] mb-[8px] text-lg leading-6 font-medium text-darkFontColor dark:text-white">
@@ -140,7 +143,7 @@ export const Modal = ({
               </h2>
 
               <div className="text-cardOptionsColor text-xs leading-[18px] mb-[14px]">
-                <ul className="line-clamp-1 gap-y-1">
+                <ul className="line-clamp-1 gap-y-1 mb-[4px]">
                   {listData.map((item, index) => (
                     <li
                       key={index}
@@ -149,6 +152,21 @@ export const Modal = ({
                       <p>{item}</p>
                     </li>
                   ))}
+                </ul>
+
+                <ul className="line-clamp-1 gap-y-1">
+                  <li
+                    key={id}
+                    className="relative inline-block pl-[6px] ml-[6px] first:border-0 first:m-0 first:p-0 border-l-[1px]"
+                  >
+                    <p>Fuel Consumption: {fuelConsumption}</p>
+                  </li>
+                  <li
+                    key={id}
+                    className="relative inline-block pl-[6px] ml-[6px] first:border-0 first:m-0 first:p-0 border-l-[1px]"
+                  >
+                    <p>Engine Size: {engineSize}</p>
+                  </li>
                 </ul>
               </div>
               <p className="mb-[24px] text-sm text-darkFontColor dark:text-white">
