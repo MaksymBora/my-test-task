@@ -1,6 +1,6 @@
 export const Description = () => {
   return (
-    <section className="md:w-[1280px] md:container-xl pb-4 md:pb-8 mx-auto my-16 text-sky-800 dark:text-gray-400 ">
+    <section className="md:w-[1212px] md:container-xl py-[24px] px-[16px] md:pb-[32px] mx-auto my-16 text-sky-800 dark:text-gray-400 ">
       <h1 className="text-3xl font-medium md:text-4xl text-left">
         Rent a car for a month with complete peace of mind
       </h1>

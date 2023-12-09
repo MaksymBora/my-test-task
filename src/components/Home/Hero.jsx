@@ -46,7 +46,7 @@ export const Hero = () => {
   };
 
   return (
-    <section className="md:w-[1280px] md:container-xl h-[720px] w-full m-auto py-6 px-4 relative group">
+    <section className="md:w-[1212px] md:container-xl h-[720px] w-full m-auto py-[24px] px-[16px] relative group">
       <div
         style={{ backgroundImage: `url(${slides[currentIndex].url})` }}
         className="w-full h-full rounded-2xl bg-center bg-cover duration-500 shadow-xl"

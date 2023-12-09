@@ -1,6 +1,6 @@
 export const Review = () => {
   return (
-    <section className="md:w-[1280px] md:container-xl pb-[16px] md:pb-[32px] mx-auto">
+    <section className="md:w-[1212px] md:container-xl py-[24px] px-[16px] md:pb-[32px] mx-auto">
       <div className="grid mb-[32px] border border-gray-200 rounded-lg shadow-sm dark:border-gray-700 md:mb-12 md:grid-cols-2 bg-white dark:bg-gray-800">
         <figure className="flex flex-col items-center justify-center p-[32px] text-center bg-white border-b border-gray-200 rounded-t-lg md:rounded-t-none md:rounded-ss-lg md:border-e dark:bg-gray-800 dark:border-gray-700">
           <blockquote className="max-w-2xl mx-auto mb-[16px] text-gray-500 lg:mb-[32px] dark:text-gray-400">

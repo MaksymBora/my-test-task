@@ -4,7 +4,7 @@ import cardImg3 from '../../assets/images/cardimg3.jpg';
 export const CardPreBook = () => {
   return (
     <>
-      <section className="md:w-[1280px] md:container-xl pb-4 md:pb-8 mx-auto">
+      <section className="md:w-[1212px] md:container-xl py-[24px] px-[16px] md:pb-8 mx-auto">
         <div className="flex flex-col md:flex-row gap-6 md:justify-between">
           <div className="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
             <img

@@ -35,9 +35,16 @@ export const CatalogList = () => {
     setPage((prevPage) => prevPage + 1);
   };
 
+  const cardsPerLine = [5, 6, 7, 9, 10, 11];
+  const isCardsPerLine = cardsPerLine.includes(totalCarsInArr);
+
   return (
-    <>
-      <ul className="mb-[100px] flex justify-center gap-[16px] sm:gap-[16px] mx-auto md:justify-start md:items-center flex-wrap md:gap-[29px]">
+    <div>
+      <ul
+        className={`mb-[100px] flex justify-center gap-[16px] sm:gap-[16px] mx-auto ${
+          isCardsPerLine ? 'md:justify-start' : 'md:justify-center'
+        } md:items-center flex-wrap md:gap-[29px]`}
+      >
         {allCars.map((car, index) => {
           const { id } = car;
 
@@ -72,6 +79,6 @@ export const CatalogList = () => {
           <Loader />
         </div>
       )}
-    </>
+    </div>
   );
 };

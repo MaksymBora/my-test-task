@@ -32,7 +32,7 @@ export const Navbar = () => {
 
   return (
     <nav className="border-gray-200 shadow-md bg-gray-50 dark:bg-gray-800 dark:border-gray-700 p-[10px] md:p-0">
-      <div className="max-w-[1280px] flex flex-wrap items-center justify-between mx-auto px-[15px]">
+      <div className="max-w-[1212px] flex flex-wrap items-center justify-between mx-auto px-[15px]">
         <a
           href="/"
           className="flex items-center space-x-3 rtl:space-x-reverse font-logo font-medium"
@@ -124,7 +124,7 @@ export const Navbar = () => {
             <li>
               <Link
                 to="/favorites"
-                className={`block py-2 px-3 md:pt-[24px] md:pb-[14px] text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 
+                className={`block py-[8px] pl-[12px]  md:pt-[24px] md:pb-[14px] text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 
                 md:hover:text-blue-700 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white 
                 md:dark:hover:bg-transparent cursor-pointer hover:animate-pulse ${
                   pathname === '/favorites' &&
