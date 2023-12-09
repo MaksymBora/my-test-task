@@ -1,4 +1,3 @@
-import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { Layout } from './components/Global/Layout';
 import { Home, Catalog, Favorites } from './components/Routing/routesImport';

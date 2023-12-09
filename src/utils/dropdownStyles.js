@@ -1,5 +1,3 @@
-import { Placeholder } from 'react-select/animated';
-
 export const dropdownStyles = {
   control: (styles) => ({
     ...styles,
@@ -18,7 +16,7 @@ export const dropdownStyles = {
     cursor: 'pointer',
     fontSize: '14px',
   }),
-  placeholder: (provided, state) => ({
+  placeholder: (provided) => ({
     ...provided,
     color: '#121417',
   }),

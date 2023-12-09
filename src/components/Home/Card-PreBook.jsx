@@ -18,8 +18,8 @@ export const CardPreBook = () => {
                 GUARANTEE YOURSELF A CAR
               </h5>
               <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
-                Book a car in advance and we'll deliver it to you {'\u2014'}{' '}
-                when you want it, where you want it.
+                Book a car in advance and we&apos;ll deliver it to you{' '}
+                {'\u2014'} when you want it, where you want it.
               </p>
               <Button title={'Pre-Book Now'} />
             </div>
@@ -39,7 +39,7 @@ export const CardPreBook = () => {
                 SHARE NOW cars free-float within the city. During your monthly
                 rental, you can of course leave the{' '}
                 <span className="text-logoColor">Home Area</span>, just bring
-                the car back when you're done.
+                the car back when you&apos;re done.
               </p>
               <Button title={'Contact Us'} />
             </div>

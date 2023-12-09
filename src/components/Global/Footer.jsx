@@ -8,6 +8,7 @@ export const Footer = () => {
             href="https://github.com/MaksymBora/my-test-task"
             className="hover:underline"
             target="_blank"
+            rel="noreferrer"
           >
             MaksBora™
           </a>
