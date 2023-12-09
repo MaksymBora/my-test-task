@@ -1,6 +1,5 @@
 import cardImg2 from '../../assets/images/cardimg2.jpg';
 import cardImg3 from '../../assets/images/cardimg3.jpg';
-import { Button } from '../common/Button';
 
 export const CardPreBook = () => {
   return (
@@ -14,14 +13,24 @@ export const CardPreBook = () => {
               alt=""
             />
             <div className="flex flex-col justify-between p-4 leading-normal">
-              <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-                GUARANTEE YOURSELF A CAR
-              </h5>
-              <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
-                Book a car in advance and we&apos;ll deliver it to you{' '}
-                {'\u2014'} when you want it, where you want it.
-              </p>
-              <Button title={'Pre-Book Now'} />
+              <div className="flex flex-col gap-y-[80px]">
+                <div>
+                  <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                    GUARANTEE YOURSELF A CAR
+                  </h5>
+                  <p className="font-normal text-gray-700 dark:text-gray-400">
+                    Book a car in advance and we&apos;ll deliver it to you{' '}
+                    {'\u2014'} when you want it, where you want it.
+                  </p>
+                </div>
+                <a
+                  href="tel:+380730000000"
+                  type="button"
+                  className="m-0 py-[12px] px-[50px] btn-link"
+                >
+                  Pre-Book Now
+                </a>
+              </div>
             </div>
           </div>
 
@@ -41,7 +50,14 @@ export const CardPreBook = () => {
                 <span className="text-logoColor">Home Area</span>, just bring
                 the car back when you&apos;re done.
               </p>
-              <Button title={'Contact Us'} />
+
+              <a
+                href="tel:+380730000000"
+                type="button"
+                className="m-0 py-[12px] px-[50px] btn-link"
+              >
+                Contact Us
+              </a>
             </div>
           </div>
         </div>
