@@ -7,7 +7,7 @@ export const FavoritesList = () => {
 
   return (
     <>
-      <ul className="mb-[100px] flex justify-start items-center flex-wrap gap-[29px]">
+      <ul className="mb-[100px] pt-[20px]  md:pt-[50px]  flex justify-center gap-[16px] sm:gap-[16px] mx-auto md:justify-start md:items-center flex-wrap md:gap-[29px]">
         {favoriteCars.map((car) => {
           const { id } = car;
 

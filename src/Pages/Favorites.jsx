@@ -6,7 +6,7 @@ const Favorites = () => {
   const totalCars = useSelector(totalFavoritesCars);
 
   return (
-    <section className="md:max-w-[1280px] min-h-[calc(100vh-132px)] mt-[24px] p-[16px] md:px-[16px] mx-auto">
+    <section className="pb-[100px] md:max-w-[1280px] min-h-[calc(100vh-308px)] md:px-[16px] mx-auto">
       {totalCars > 0 ? (
         <FavoritesList />
       ) : (
