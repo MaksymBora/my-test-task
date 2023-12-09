@@ -140,11 +140,11 @@ export const Modal = ({
               </h2>
 
               <div className="text-cardOptionsColor text-xs leading-[18px] mb-[14px]">
-                <ul className="flex flex-row items-start flex-wrap gap-y-1">
+                <ul className="line-clamp-1 gap-y-1">
                   {listData.map((item, index) => (
                     <li
                       key={index}
-                      className="relative inline-block pr-[6px] mr-[6px] border-r-[1px] last:border-0"
+                      className="relative inline-block pl-[6px] ml-[6px] first:border-0 first:m-0 first:p-0 border-l-[1px]"
                     >
                       <p>{item}</p>
                     </li>
@@ -162,22 +162,22 @@ export const Modal = ({
                 </p>
 
                 <div className="text-cardOptionsColor text-xs leading-[18px] mb-[24px]">
-                  <ul className="flex flex-row items-start flex-wrap gap-y-1 mb-[4px]">
+                  <ul className="gap-y-1 mb-[4px] line-clamp-1">
                     {accessories.map((item, index) => (
                       <li
                         key={`${id}-${index}`}
-                        className="relative inline-block pr-[6px] mr-[6px] border-r-[1px] last:border-0"
+                        className="relative inline-block pl-[6px] ml-[6px] first:border-0 first:m-0 first:p-0 border-l-[1px]"
                       >
                         <p>{item}</p>
                       </li>
                     ))}
                   </ul>
 
-                  <ul className="flex flex-row items-start flex-wrap gap-y-1">
+                  <ul className="line-clamp-1 gap-y-1">
                     {functionalities.map((item, index) => (
                       <li
                         key={`${id}-${index}`}
-                        className="relative inline-block pr-[6px] mr-[6px] border-r-[1px] last:border-0"
+                        className="relative inline-block pl-[6px] ml-[6px] first:border-0 first:m-0 first:p-0 border-l-[1px]"
                       >
                         <p>{item}</p>
                       </li>
