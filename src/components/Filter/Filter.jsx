@@ -4,7 +4,7 @@ import { InputFromTo } from './InputFromTo';
 import { options, priceOptions } from '../../utils/dropdownOptions';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectFilterCars } from '../../Redux/Filter/selectors';
-import { fetchFilteredAllCars } from '../../Redux/cars/operations';
+import { fetchFilteredAllCars } from '../../Redux/Filter/operations';
 import { Suspense } from 'react';
 import { Loader } from '../../utils/Loader';
 import { Outlet } from 'react-router-dom';

@@ -10,6 +10,7 @@ const slice = createSlice({
   name: 'filter',
   initialState: {
     formData: initialValuesState,
+    filteredData: [],
   },
   reducers: {
     carsFilter(state, action) {
