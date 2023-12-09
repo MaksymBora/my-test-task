@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import noresponse from '../../assets/images/noresponse.jpg';
+import { nanoid } from 'nanoid';
 
 export const Modal = ({
   isOpenModalProp,
@@ -33,7 +34,6 @@ export const Modal = ({
   }, [isOpenModalProp, handleModalCloseProp]);
 
   const {
-    id,
     make,
     year,
     model,
@@ -91,7 +91,7 @@ export const Modal = ({
         className={`${
           isOpenModalProp ? '' : 'hidden'
         } fix bg-backdropColor overflow-y-auto overflow-x-hidden fixed top-0 right-0 
-        left-0 z-50 justify-center items-center w-full md:inset-0 h-full`}
+        left-0 z-50 justify-center items-center w-full md:inset-0 h-full `}
       >
         <div className="absolute w-full max-w-full">
           {/*  Modal content */}
@@ -142,11 +142,11 @@ export const Modal = ({
                 {year}
               </h2>
 
-              <div className="text-cardOptionsColor text-xs leading-[18px] mb-[14px]">
+              <div className="dark:text-gray-300 text-cardOptionsColor text-xs leading-[18px] mb-[14px]">
                 <ul className="line-clamp-1 gap-y-1 mb-[4px]">
-                  {listData.map((item, index) => (
+                  {listData.map((item) => (
                     <li
-                      key={index}
+                      key={nanoid()}
                       className="relative inline-block pl-[6px] ml-[6px] first:border-0 first:m-0 first:p-0 border-l-[1px]"
                     >
                       <p>{item}</p>
@@ -154,15 +154,15 @@ export const Modal = ({
                   ))}
                 </ul>
 
-                <ul className="line-clamp-1 gap-y-1">
+                <ul className="line-clamp-1 gap-y-1 dark:text-gray-300">
                   <li
-                    key={id}
+                    key={nanoid()}
                     className="relative inline-block pl-[6px] ml-[6px] first:border-0 first:m-0 first:p-0 border-l-[1px]"
                   >
                     <p>Fuel Consumption: {fuelConsumption}</p>
                   </li>
                   <li
-                    key={id}
+                    key={nanoid()}
                     className="relative inline-block pl-[6px] ml-[6px] first:border-0 first:m-0 first:p-0 border-l-[1px]"
                   >
                     <p>Engine Size: {engineSize}</p>
@@ -179,11 +179,11 @@ export const Modal = ({
                   Accessories and functionalities:
                 </p>
 
-                <div className="text-cardOptionsColor text-xs leading-[18px] mb-[24px]">
+                <div className="dark:text-gray-300 text-cardOptionsColor text-xs leading-[18px] mb-[24px]">
                   <ul className="gap-y-1 mb-[4px] line-clamp-1">
-                    {accessories.map((item, index) => (
+                    {accessories.map((item) => (
                       <li
-                        key={`${id}-${index}`}
+                        key={nanoid()}
                         className="relative inline-block pl-[6px] ml-[6px] first:border-0 first:m-0 first:p-0 border-l-[1px]"
                       >
                         <p>{item}</p>
@@ -192,9 +192,9 @@ export const Modal = ({
                   </ul>
 
                   <ul className="line-clamp-1 gap-y-1">
-                    {functionalities.map((item, index) => (
+                    {functionalities.map((item) => (
                       <li
-                        key={`${id}-${index}`}
+                        key={nanoid()}
                         className="relative inline-block pl-[6px] ml-[6px] first:border-0 first:m-0 first:p-0 border-l-[1px]"
                       >
                         <p>{item}</p>

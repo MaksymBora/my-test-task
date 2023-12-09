@@ -1,16 +1,35 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import logo from '../../assets/logo.svg';
-import { IoMoon } from 'react-icons/io5';
-// import { IoMoon, IoSunny } from 'react-icons/io5';
+import { useDispatch, useSelector } from 'react-redux';
+import { selectCurrentTheme } from '../../Redux/Theme/selectors';
+import { IoMoon, IoSunny } from 'react-icons/io5';
+import { switchThemeMode } from '../../Redux/Theme/slice';
 
 export const Navbar = () => {
   const [isMenu, setIsMenu] = useState(false);
   const { pathname } = useLocation();
+  const darkTheme = useSelector(selectCurrentTheme);
+
+  console.log(darkTheme, 'Dark Theme');
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    if (!darkTheme) {
+      document.documentElement.classList.remove('dark');
+    } else {
+      document.documentElement.classList.add('dark');
+    }
+  }, [darkTheme]);
 
   const handleOpenMenu = () => {
     setIsMenu(!isMenu);
+  };
+
+  const toggleUiTheme = () => {
+    dispatch(switchThemeMode());
   };
 
   return (
@@ -51,15 +70,17 @@ export const Navbar = () => {
           </svg>
         </button>
 
-        {/* <IoSunny
-            // onClick={toggleUiTheme}
-            className="cursor-pointer text-black dark:text-mainTextColo hidden md:block text-[21px] ml-auto mt-[8px] mr-[40px]"
-          /> */}
-
-        <IoMoon
-          // onClick={toggleUiTheme}
-          className="cursor-pointer text-black dark:text-mainTextColo hidden md:block text-[21px] ml-auto mt-[8px] mr-[40px]"
-        />
+        {darkTheme ? (
+          <IoMoon
+            onClick={toggleUiTheme}
+            className="cursor-pointer text-black dark:text-white hidden md:block text-[21px] ml-auto mt-[8px] mr-[40px]"
+          />
+        ) : (
+          <IoSunny
+            onClick={toggleUiTheme}
+            className="cursor-pointer text-black hidden md:block text-[21px] ml-auto mt-[8px] mr-[40px]"
+          />
+        )}
 
         <div
           className={`${isMenu ? 'block' : 'hidden'} w-full md:block md:w-auto`}

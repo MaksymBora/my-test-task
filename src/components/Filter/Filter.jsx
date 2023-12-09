@@ -1,6 +1,6 @@
 import { Button } from '../common/Button';
 import { DropdownSelect } from '../common/DropdownSelect';
-import { InputFromTo } from './InputFromTo';
+import { InputFromTo } from '../Catalog/InputFromTo';
 import { options, priceOptions } from '../../utils/dropdownOptions';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectFilterCars } from '../../Redux/Filter/selectors';

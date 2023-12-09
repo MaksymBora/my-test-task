@@ -1,5 +1,5 @@
 import { CatalogList } from '../components/Catalog/CatalogList';
-import { Filter } from '../components/Catalog/Filter';
+import { Filter } from '../components/Filter/Filter';
 
 const Catalog = () => {
   return (

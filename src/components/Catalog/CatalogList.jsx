@@ -42,7 +42,7 @@ export const CatalogList = () => {
           const { id } = car;
 
           return (
-            <li key={id + index}>
+            <li key={id + 'abc' + index}>
               <CardAuto carData={car} />
             </li>
           );

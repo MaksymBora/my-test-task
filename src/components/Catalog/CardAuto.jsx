@@ -8,6 +8,7 @@ import {
   removeFromFavorites,
 } from '../../Redux/favoriteCars/slice';
 import { favoritesCars } from '../../Redux/favoriteCars/selectors';
+import { nanoid } from 'nanoid';
 
 export const CardAuto = ({ carData }) => {
   const [isOpenModal, setIsOpenModal] = useState(false);
@@ -102,40 +103,58 @@ export const CardAuto = ({ carData }) => {
         </div>
 
         <div className="flex justify-between mb-[8px]">
-          <p className="text-base font-medium text-darkFontColor line-clamp-1">
+          <p className="text-base font-medium dark:text-white text-darkFontColor line-clamp-1">
             {make} <span className="text-lightBlueColor">{model}</span>, {year}
           </p>
-          <p className="text-base font-medium text-darkFontColor mr-[9px]">
+          <p className="text-base dark:text-white font-medium text-darkFontColor mr-[9px]">
             {rentalPrice}
           </p>
         </div>
-        <div className="text-cardOptionsColor text-xs leading-[18px] mb-[28px]">
+        <div className="text-cardOptionsColor dark:text-white text-xs leading-[18px] mb-[28px]">
           <ul className="mb-[4px] line-clamp-1">
-            <li className="relative inline-block pr-[6px] mr-[6px] border-r-[1px] ">
+            <li
+              key={nanoid()}
+              className="relative inline-block pr-[6px] mr-[6px] border-r-[1px] "
+            >
               <p>{updateArray[0] || ''}</p>
             </li>
-            <li className="relative inline-block pr-[6px] mr-[6px] border-r-[1px] ">
+            <li
+              key={nanoid()}
+              className="relative inline-block pr-[6px] mr-[6px] border-r-[1px] "
+            >
               <p>{updateArray[1] || ''}</p>
             </li>
-            <li className="relative inline-block">
+            <li key={nanoid()} className="relative inline-block">
               <p>{rentalCompany}</p>
             </li>
-            <li className="relative inline-block border-l-[1px] ml-[6px] pl-[6px]">
+            <li
+              key={nanoid()}
+              className="relative inline-block border-l-[1px] ml-[6px] pl-[6px]"
+            >
               <p>Premium</p>
             </li>
           </ul>
           {/* 2nd line */}
           <ul className="gap-y-1 line-clamp-1">
-            <li className="relative inline-block pr-[6px] mr-[6px] border-r-[1px]">
+            <li
+              key={nanoid()}
+              className="relative inline-block pr-[6px] mr-[6px] border-r-[1px]"
+            >
               <p>{type}</p>
             </li>
-            <li className="relative inline-block pr-[6px] mr-[6px] border-r-[1px]">
+            <li
+              key={nanoid()}
+              className="relative inline-block pr-[6px] mr-[6px] border-r-[1px]"
+            >
               <p>{model}</p>
             </li>
-            <li className="relative inline-block ">
+            <li key={nanoid()} className="relative inline-block ">
               <p>{mileage}</p>
             </li>
-            <li className="relative inline-block border-l-[1px] ml-[6px] pl-[6px]">
+            <li
+              key={nanoid()}
+              className="relative inline-block border-l-[1px] ml-[6px] pl-[6px]"
+            >
               <p>{functionalities[0]}</p>
             </li>
           </ul>
