@@ -102,7 +102,7 @@ export const CardAuto = ({ carData }) => {
         </div>
 
         <div className="flex justify-between mb-[8px]">
-          <p className="text-base font-medium text-darkFontColor">
+          <p className="text-base font-medium text-darkFontColor line-clamp-1">
             {make} <span className="text-lightBlueColor">{model}</span>, {year}
           </p>
           <p className="text-base font-medium text-darkFontColor mr-[9px]">

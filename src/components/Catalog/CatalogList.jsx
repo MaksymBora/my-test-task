@@ -25,7 +25,7 @@ export const CatalogList = () => {
       initialized.current = true;
       dispatch(fetchAllCars(page));
     }
-  }, [dispatch, page]);
+  });
 
   useEffect(() => {
     if (page !== 1) dispatch(fetchAllCars(page));
